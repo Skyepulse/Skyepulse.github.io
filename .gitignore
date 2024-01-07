@@ -1,0 +1,14 @@
+# Include .gitignore file itself
+!.gitignore
+
+# Include all .html files
+!*.html
+
+# Ignore specific file types
+*.php
+*.ico
+*.mp4
+
+# Ignore specific directories
+wamplanguages/
+wampthemes/
