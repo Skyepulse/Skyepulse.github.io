@@ -29,7 +29,7 @@ const color2 = "#eeeeee";
 
 const randomColors = ['#29c4da', '#de004e', '#f887ff', '#1afe49', '#8386f5'];
 
-const videoURL = '../media/';
+const videoURL = 'https://www.amazonaws.com/githubpagesvideos/';
 const videos = [videoURL + 'videoRobot1', videoURL + 'videoRobot2'];
 
 const texts = [
