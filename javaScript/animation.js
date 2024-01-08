@@ -31,7 +31,7 @@ function onWindowResize() {
 }
 
 function OnDestroyContent1() {
-    console.log('OnDestroyContent1');
+    //console.log('OnDestroyContent1');
     if (renderer) {
         renderer.dispose();
     }
@@ -84,7 +84,7 @@ function rotate(rotateN = 1, goleft = false) {
     if(rotateNum > 0){
         rotationInProgress = true;
         GoLeft = goleft;
-        console.log('rotatingLeft: ' + GoLeft);
+        //console.log('rotatingLeft: ' + GoLeft);
         if(goleft){
             rotateTimes = (rotateTimes - 1);
             if(rotateTimes < 0) rotateTimes = SelectionButtons.length - 1;
@@ -108,7 +108,7 @@ function finished() {
     if(interactiveDiv) interactiveDiv.style.display = 'block';
     
     if(rotateNum > 0){
-        console.log('rotatingLeftAgain: ' + GoLeft);
+        //console.log('rotatingLeftAgain: ' + GoLeft);
         rotate(rotateNum, GoLeft);
     } else {
         SelectionButtons.forEach((button) => {
@@ -136,7 +136,7 @@ function initiateButtons(){
         });
     });
     SelectionButtons[0].style.backgroundColor = '#ceae7d';
-    console.log('buttons initiated');
+    //console.log('buttons initiated');
 }
 
 function distance(x, y) {
@@ -156,10 +156,10 @@ function distance(x, y) {
     // If the distance to the right is shorter or the same, go right (false)
     // Otherwise, go left (true)
     if (distanceRight <= distanceLeft) {
-        console.log('distanceRight: ' + distanceRight);
+        //console.log('distanceRight: ' + distanceRight);
         return [distanceRight, false];
     } else {
-        console.log('distanceLeft: ' + distanceLeft);
+       // console.log('distanceLeft: ' + distanceLeft);
         return [distanceLeft, true];
     }
 }
