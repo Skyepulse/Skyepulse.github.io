@@ -277,7 +277,7 @@ function loadDetailsHome(){
     resizeDetailsHome();
     const CVButton = document.getElementById('CVButton');
     CVButton.addEventListener('click', function(){
-        window.open('media/cv.pdf');
+        window.open('https://githubpagesvideos.s3.eu-north-1.amazonaws.com/cv.pdf');
     });
     const LinkButton = document.getElementById('LinkButton');
     LinkButton.addEventListener('click', function(){
