@@ -277,7 +277,7 @@ function loadDetailsHome(){
     resizeDetailsHome();
     const CVButton = document.getElementById('CVButton');
     CVButton.addEventListener('click', function(){
-        window.open('media/CV.pdf');
+        window.open('media/cv.pdf');
     });
     const LinkButton = document.getElementById('LinkButton');
     LinkButton.addEventListener('click', function(){
