@@ -139,6 +139,7 @@ function InitializeArtGallery(){
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "can_1.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 5], [0, 0, 0], [1, 1, 1]));
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "can_2.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 5], [0, 0, 0], [1, 1, 1]));
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "can_3.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 5], [0, 0, 0], [1, 1, 1]));
+    toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "tea.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 30], [0, 0, 0], [1, 1, 1]));
     n = toRenderObjects.length;
     
     //Initialize scene2
