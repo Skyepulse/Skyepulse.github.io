@@ -139,6 +139,7 @@ function InitializeArtGallery(){
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "can_1.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 5], [0, 0, 0], [1, 1, 1]));
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "can_2.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 5], [0, 0, 0], [1, 1, 1]));
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "can_3.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 5], [0, 0, 0], [1, 1, 1]));
+    toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "tea.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 30], [0, 0, 0], [1, 1, 1]));
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "eye.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 1], [0, 0, 0], [1, 1, 1]));
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "hat_emoji.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 3], [0, 0, 0], [1, 1, 1]));
     toRenderObjects.push(new ArtObject([new Objectart(modelUrl + "spikeBall.glb", null, [0, 0, 0], [0, 0, 0], [1, 1, 1])], [0, 0, 1], [0, 0, 0], [1, 1, 1]));
