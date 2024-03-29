@@ -310,10 +310,12 @@ function loadDetailsContent1(){
         console.log("Mobile device detected");
         loadContentAnimation('HTMLContents/noBarAnimation.html');
         set3DRender(false);
+        checkBox.checked = false;
     } else {
         console.log("Non-mobile device detected");
         loadContentAnimation('HTMLContents/barAnimation.html');
         set3DRender(true);
+        checkBox.checked = true;
     }
     //InitializeLever();
 }   
