@@ -290,7 +290,18 @@ function loadDetailsContent1(){
         alreadyLoaded1 = true;
     }
     //console.log("Attempting to load WebGL");
-    initializeWebGL();
+    const projectSwitch = document.getElementById('projectSwitch');
+    const checkBox = projectSwitch.querySelector('input[type="checkbox"]');
+    checkBox.addEventListener('click', function(){
+        const checked = !checkBox.checked;
+        if(checked){
+            loadContentAnimation('HTMLContents/noBarAnimation.html');
+        }else{
+            loadContentAnimation('HTMLContents/barAnimation.html');
+        }
+        set3DRender(!checked);
+    });
+    loadContentAnimation('HTMLContents/barAnimation.html');
     //InitializeLever();
 }   
 

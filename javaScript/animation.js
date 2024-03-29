@@ -21,6 +21,13 @@ let scene, camera, renderer, textureLoader, loader; // Declare these variables g
 
 let animateRequestId = null;
 
+let is3DRender = true;
+
+function set3DRender(value) {
+    is3DRender = value;
+    console.log('is3DRender: ' + is3DRender);
+}
+
 function onWindowResize() {
     // Update camera aspect ratio and projection matrix
     camera.aspect = window.innerWidth / (800*0.6);
@@ -173,7 +180,21 @@ function WhichSelectionButtonClicked(button){
     }
 }
 
+function loadContentAnimation(url){
+    //console.log("Loading content");
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+            document.getElementById('Content1Div').innerHTML = xhr.responseText;
+            //console.log("Content loaded");
+           if(url === 'HTMLContents/barAnimation.html') initializeWebGL();
+           else OnDestroyContent1();
+        }
+    };
 
+    xhr.open('GET', url, true);
+    xhr.send();
+}
 
 function initializeWebGL(){
     onDestroyContent();
