@@ -30,6 +30,11 @@ function degreesToRadians(degrees) {
     return degrees * (Math.PI / 180);
 }
 
+function isMobileDevice(){
+    const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return regex.test(navigator.userAgent);
+}
+
 function drawDebugPoint(x,y){
     let debugPoint = document.createElement('div');
     debugPoint.style.position = 'absolute';
@@ -301,7 +306,15 @@ function loadDetailsContent1(){
         }
         set3DRender(!checked);
     });
-    loadContentAnimation('HTMLContents/barAnimation.html');
+    if(isMobileDevice()){
+        console.log("Mobile device detected");
+        loadContentAnimation('HTMLContents/noBarAnimation.html');
+        set3DRender(false);
+    } else {
+        console.log("Non-mobile device detected");
+        loadContentAnimation('HTMLContents/barAnimation.html');
+        set3DRender(true);
+    }
     //InitializeLever();
 }   
 
