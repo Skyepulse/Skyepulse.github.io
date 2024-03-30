@@ -758,6 +758,10 @@ input:checked + .slider_round:before{
     .projectSquare span{
         font-size: min(0.3vh, 0.5vw);
     }
+
+    #aliceSquare{
+        font-size: 0.1vh;
+    }
 }
 
 .projectSquare {
