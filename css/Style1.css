@@ -749,7 +749,7 @@ input:checked + .slider_round:before{
     width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .projectContainer {
         grid-template-columns: repeat(2, 1fr); 
     }
@@ -805,7 +805,7 @@ input:checked + .slider_round:before{
     text-align: center;
 }
 
-.projectSquare:hover span {
+.projectSquare:hover span, .projectSquare:active span{
     opacity: 1; 
 }
 
