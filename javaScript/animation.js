@@ -8,10 +8,10 @@ let GoLeft = false;
 
 const mediaUrl = '../media/';
 const htmlUrl = '../HTMLContents/';
-const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png']
-const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife']
-const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%']
-const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'ecolife.html'];
+const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png', mediaUrl + 'slider1.png']
+const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife', 'Slider\'s Adventure']
+const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%', '500%']
+const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'ecolife.html', htmlUrl + 'slider.html'];
 // Interactive Div
 let interactiveDiv = null;
 let ProjectTitle = null;
@@ -131,12 +131,14 @@ function initiateButtons(){
     const WhichSelectionButton3 = document.getElementById('WhichSelectionButton3');
     const WhichSelectionButton4 = document.getElementById('WhichSelectionButton4');
     const WhichSelectionButton5 = document.getElementById('WhichSelectionButton5');
+    const WhichSelectionButton6 = document.getElementById('WhichSelectionButton6');
     
     SelectionButtons.push(WhichSelectionButton1);
     SelectionButtons.push(WhichSelectionButton2);
     SelectionButtons.push(WhichSelectionButton3);
     SelectionButtons.push(WhichSelectionButton4);
     SelectionButtons.push(WhichSelectionButton5);
+    SelectionButtons.push(WhichSelectionButton6);
     SelectionButtons.forEach((button) => {
         button.addEventListener('click', () => {
             WhichSelectionButtonClicked(button)
