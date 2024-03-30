@@ -809,7 +809,7 @@ input:checked + .slider_round:before{
     text-align: center;
 }
 
-.projectSquare:hover span, .projectSquare:active span{
+.projectSquare:hover span, .projectSquare:focus, .projectSquare:active span{
     opacity: 1; 
 }
 
