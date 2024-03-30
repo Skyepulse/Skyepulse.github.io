@@ -8,10 +8,10 @@ let GoLeft = false;
 
 const mediaUrl = '../media/';
 const htmlUrl = '../HTMLContents/';
-const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'projects5.png']
-const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Project 5']
+const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png']
+const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife']
 const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%']
-const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'Project5.html'];
+const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'ecolife.html'];
 // Interactive Div
 let interactiveDiv = null;
 let ProjectTitle = null;
@@ -25,7 +25,6 @@ let is3DRender = true;
 
 function set3DRender(value) {
     is3DRender = value;
-    console.log('is3DRender: ' + is3DRender);
 }
 
 function onWindowResize() {
@@ -103,6 +102,7 @@ function rotate(rotateN = 1, goleft = false) {
         if(interactiveDiv){
             interactiveDiv.style.display = 'none';
             interactiveDiv.style.backgroundImage = 'url(' + projectImages[rotateTimes] + ')';
+            console.log('projectImages[rotateTimes]: ' + projectImages[rotateTimes]);
             ProjectTitle.innerHTML = projectDescriptions[rotateTimes];
             ProjectTitle.style.fontSize = projectDescriptionSizes[rotateTimes];
         } 

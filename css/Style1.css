@@ -666,6 +666,7 @@ input:checked + .slider_round:before{
     justify-content: center;
     z-index: 1;
     align-self: flex-start;
+    transform: translateY(-50%);
 }
 
 #WhichSelection{
@@ -755,11 +756,26 @@ input:checked + .slider_round:before{
 }
 
 .projectSquare {
-    background-color: #0072b1;
+    background-color: #6e470c;
     border: #11101A solid 1px;
     box-sizing: border-box;
     position: relative;
     width: 100%; 
+}
+
+.projectSquare img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.projectSquare img:hover {
+    cursor: pointer;
+    opacity: 0.4;
 }
 
 .projectSquare::after {
@@ -768,10 +784,33 @@ input:checked + .slider_round:before{
     padding-top: 100%; 
 }
 
-
-#Content1Div{
+.projectSquare span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+    z-index: 1; 
+    padding: 10px; 
+    box-sizing: border-box;
+    font-family: 'SteamWreck', sans-serif;
+    font-size: 10vh;
+    text-align: center;
 }
+
+.projectSquare:hover span {
+    opacity: 1; 
+}
+
+
+
 /*Content 2*/
 
 .MainCenteringDiv{
