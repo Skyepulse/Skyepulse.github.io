@@ -187,8 +187,26 @@ function loadContentAnimation(url){
         if(xhr.readyState === 4 && xhr.status === 200){
             document.getElementById('Content1Div').innerHTML = xhr.responseText;
             //console.log("Content loaded");
-           if(url === 'HTMLContents/barAnimation.html') initializeWebGL();
-           else OnDestroyContent1();
+            if(url === 'HTMLContents/barAnimation.html') initializeWebGL();
+            else if(url === 'HTMLContents/noBarAnimation.html'){
+                const projectSquares = document.querySelectorAll('.projectSquare');
+                projectSquares.forEach((square) => {
+                    const image = square.getElementsByTagName('img')[0];
+                    const span = square.getElementsByTagName('span')[0];
+                    square.addEventListener('touchstart', () => {
+                        span.style.opacity = '1';
+                        image.style.opacity = '0.4';
+                    });
+                    square.addEventListener('touchend', () => {
+                        span.style.opacity = '0';
+                        image.style.opacity = '1';
+                    });
+                    square.addEventListener('click', () => {
+                        console.log("TEST");
+                    });
+                });
+            }
+            else OnDestroyContent1();
         }
     };
 

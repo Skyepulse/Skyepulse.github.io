@@ -752,10 +752,11 @@ input:checked + .slider_round:before{
 @media (max-width: 1000px) {
     .projectContainer {
         grid-template-columns: repeat(2, 1fr); 
+        background-color: #0072b1;
     }
 
     .projectSquare span{
-        font-size: 1vh;
+        font-size: 0.3vh;
     }
 }
 
@@ -809,11 +810,9 @@ input:checked + .slider_round:before{
     text-align: center;
 }
 
-.projectSquare:hover span, .projectSquare:focus, .projectSquare:active span{
+.projectSquare:hover span{
     opacity: 1; 
 }
-
-
 
 /*Content 2*/
 
