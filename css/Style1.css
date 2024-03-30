@@ -749,21 +749,6 @@ input:checked + .slider_round:before{
     width: 100%;
 }
 
-@media (max-width: 1000px) {
-    .projectContainer {
-        grid-template-columns: repeat(2, 1fr); 
-        background-color: #0072b1;
-    }
-
-    .projectSquare span{
-        font-size: min(0.3vh, 0.5vw);
-    }
-
-    #aliceSquare{
-        font-size: 0.1vh;
-    }
-}
-
 .projectSquare {
     background-color: #6e470c;
     border: #11101A solid 1px;
@@ -816,6 +801,20 @@ input:checked + .slider_round:before{
 
 .projectSquare:hover span{
     opacity: 1; 
+}
+
+@media (max-width: 1000px) {
+    .projectContainer {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .projectSquare span{
+        font-size: 0.2vh;
+    }
+
+    #aliceSquare{
+        font-size: 0.1vh;
+    }
 }
 
 /*Content 2*/
