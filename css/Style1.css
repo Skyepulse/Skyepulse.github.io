@@ -809,11 +809,11 @@ input:checked + .slider_round:before{
     }
 
     .projectSquare span{
-        font-size: 0.2vh;
+        font-size: 8vh;
     }
 
     #aliceSquare{
-        font-size: 0.1vh;
+        font-size: 7vh;
     }
 }
 
