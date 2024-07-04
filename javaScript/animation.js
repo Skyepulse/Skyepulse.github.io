@@ -7,11 +7,11 @@ let rotateNum = 0;
 let GoLeft = false;
 
 const mediaUrl = '../media/';
-const htmlUrl = '../HTMLContents/';
-const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png', mediaUrl + 'slider1.png', mediaUrl + 'kmk.png']
-const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife', 'Slider\'s Adventure', 'Kiss Marry Kill']
-const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%', '500%', '500%']
-const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'ecolife.html', htmlUrl + 'slider.html', 'https://matelou.itch.io/kiss-marry-kill'];
+const htmlUrl = '../HTMLContents/Projects/';
+const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png', mediaUrl + 'slider1.png', mediaUrl + 'kmk.png', mediaUrl + 'projects1.png']
+const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife', 'Slider\'s Adventure', 'Kiss Marry Kill', 'GlassOverflow']
+const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%', '500%', '500%', '500%']
+const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'ecolife.html', htmlUrl + 'slider.html', 'https://matelou.itch.io/kiss-marry-kill', htmlUrl + 'Glassoverflow.html'];
 // Interactive Div
 let interactiveDiv = null;
 let ProjectTitle = null;
@@ -133,6 +133,7 @@ function initiateButtons(){
     const WhichSelectionButton5 = document.getElementById('WhichSelectionButton5');
     const WhichSelectionButton6 = document.getElementById('WhichSelectionButton6');
     const WhichSelectionButton7 = document.getElementById('WhichSelectionButton7');
+    const WhichSelectionButton8 = document.getElementById('WhichSelectionButton8');
     
     SelectionButtons.push(WhichSelectionButton1);
     SelectionButtons.push(WhichSelectionButton2);
@@ -141,6 +142,7 @@ function initiateButtons(){
     SelectionButtons.push(WhichSelectionButton5);
     SelectionButtons.push(WhichSelectionButton6);
     SelectionButtons.push(WhichSelectionButton7);
+    SelectionButtons.push(WhichSelectionButton8);
     SelectionButtons.forEach((button) => {
         button.addEventListener('click', () => {
             WhichSelectionButtonClicked(button)
