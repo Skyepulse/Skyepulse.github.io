@@ -97,7 +97,7 @@ h1 span.g, h1 span.o {
     flex-direction: column;
     height: 500px;
     width: 500px;
-    border-radius: 5%;
+    border-radius: 2.5%;
     overflow: hidden;
 }
 
@@ -193,4 +193,27 @@ h1 span.g, h1 span.o {
     font: 1.0em 'SF Pro Display', sans-serif;
     color: #EEEEEE;
     padding: 20px;
+}
+
+.download-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c0aa1c;
+    color: #EEEEEE;
+    font: 2.0em 'SF Pro Display', sans-serif;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.download-button:hover{
+    cursor: pointer;
+    background-color: #908015;
+    scale: 1.05;
+}
+
+.download-button:active{
+    background-color: #c0aa1c;
+    transform: translate(0, 5px);
 }
