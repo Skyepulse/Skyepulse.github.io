@@ -192,7 +192,7 @@ class Window {
                     this.resetTimer = this.resetTimer.bind(this); // Bind context
                     this.timer = setInterval(this.changeGalleryPicture, 5000);
                     this.progressBar = new ProgressBar(0, 0, 100);
-                    this.windowElement.appendChild(this.progressBar.dom);
+                    this.windowElement.querySelector(".timer-bar-container").appendChild(this.progressBar.dom);
                     this.progressBar.startTo(5, 500);
                     setTimeout(() => {
                         this.progressBar.end()
@@ -227,8 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     const HTMLCONTENT2 = `
-    <div class='gallery-container' onclick='ChangeGalleryPicture()">
-        <div class ='timer-bar-container' id = 'barContainer'></div>
+    <div class='gallery-container'>
+        <div class='timer-bar-container' id='barContainer'></div>
     </div>
     `;
 
