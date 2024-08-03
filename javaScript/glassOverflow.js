@@ -1,6 +1,5 @@
 let windows = [];
-let galleryPictures = ['../../media/slider1.png', '../../media/slider2.png', '../../media/slider3.png', '../../media/slider4.png'];
-
+let galleryPictures = ['../../media/GO1.png', '../../media/GO2.png', '../../media/GO3.png', '../../media/GO4.png', '../../media/GO5.png'];
 function elt(type, prop, ...childrens) {
     let elem = document.createElement(type);
     if (prop) Object.assign(elem, prop);
@@ -191,9 +190,9 @@ class Window {
                     this.changeGalleryPicture = this.changeGalleryPicture.bind(this); // Bind context
                     this.resetTimer = this.resetTimer.bind(this); // Bind context
                     this.timer = setInterval(this.changeGalleryPicture, 5000);
-                    this.progressBar = new ProgressBar(0, 0, 100);
+                    this.progressBar = new ProgressBar(10, 0, 100);
                     this.windowElement.querySelector(".timer-bar-container").appendChild(this.progressBar.dom);
-                    this.progressBar.startTo(5, 500);
+                    this.progressBar.startTo(10, 500);
                     setTimeout(() => {
                         this.progressBar.end()
                     }, 5000);
@@ -205,9 +204,9 @@ class Window {
     changeGalleryPicture() {
         console.log('Changing gallery picture');
         this.resetTimer();
-        //var gallery = this.windowElement.querySelector('.gallery-picture');
-        //this.index = (this.index + 1) % this.galleryImages.length;
-        //gallery.src = this.galleryImages[this.index];
+        var gallery = this.windowElement.querySelector('.gallery-picture');
+        this.index = (this.index + 1) % this.galleryImages.length;
+        gallery.src = this.galleryImages[this.index];
     }
 
     resetTimer() {
@@ -222,18 +221,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxX = window.innerWidth;
     const maxY = window.innerHeight;
 
+    
+
+    function logDimensions(stage) {
+        let galleryContainer = document.querySelector('.gallery-container');
+        let galleryPicture = document.querySelector('.gallery-picture');
+        console.log(`-- ${stage} --`);
+        console.log(`Container Dimensions:`);
+        console.log(`  Offset Height: ${galleryContainer.offsetHeight}`);
+        console.log(`  Offset Width: ${galleryContainer.offsetWidth}`);
+        console.log(`  Client Height: ${galleryContainer.clientHeight}`);
+        console.log(`  Client Width: ${galleryContainer.clientWidth}`);
+        console.log(`  Scroll Height: ${galleryContainer.scrollHeight}`);
+        console.log(`  Scroll Width: ${galleryContainer.scrollWidth}`);
+        
+        console.log(`Image Dimensions:`);
+        console.log(`  Offset Height: ${galleryPicture.offsetHeight}`);
+        console.log(`  Offset Width: ${galleryPicture.offsetWidth}`);
+        console.log(`  Client Height: ${galleryPicture.clientHeight}`);
+        console.log(`  Client Width: ${galleryPicture.clientWidth}`);
+        console.log(`  Natural Height: ${galleryPicture.naturalHeight}`);
+        console.log(`  Natural Width: ${galleryPicture.naturalWidth}`);
+        console.log(`---------------------`);
+    }
+
+    document.addEventListener('click', () => {
+        logDimensions('Click');
+    });
+
     const HTMLCONTENT1 = `
     <button class="download-button" onclick="downloadGame()">DOWNLOAD GLASSOVERFLOW (WINDOWS x64)</button>
     `;
 
     const HTMLCONTENT2 = `
     <div class='gallery-container'>
-        <div class='timer-bar-container' id='barContainer'></div>
+        <div class='timer-bar-container'></div>
+        <img class='gallery-picture' alt='Gallery picture' src='${galleryPictures[0]}' />   
     </div>
     `;
 
+    let pictureRatio = 1.5;
+
     new Window('DOWNLOAD', HTMLCONTENT1, maxX * 1.0 / 10.0, maxY * 7.0 / 10.0, 600, 400, 900, 600);
-    new Window('GALLERY', HTMLCONTENT2, maxX * 4.5 / 10.0, maxY * 1.0 / 10.0, 400, 200, 800, 400, { specialType: 'gallery', galleryImages: galleryPictures });
+    new Window('GALLERY', HTMLCONTENT2, maxX * 4.5 / 10.0, maxY * 1.0 / 10.0, maxX * 1.4 / 10.0, maxY * 1.0 / 2.5, maxX * 1.4 / 10.0 * pictureRatio, maxY * 1.0 / 2.5 * pictureRatio, { specialType: 'gallery', galleryImages: galleryPictures });
     new Window('Window 3', 'This is the content of Window 3', maxX * 8.0 / 10.0, maxY * 5.0 / 10.0, 400, 200, 800, 400);
 });
 

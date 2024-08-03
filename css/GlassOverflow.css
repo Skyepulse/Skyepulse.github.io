@@ -183,6 +183,7 @@ h1 span.g, h1 span.o {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 90%;
     width: 90%;
     background: rgb(115,38,106);
@@ -221,7 +222,7 @@ h1 span.g, h1 span.o {
 .gallery-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     background-color: #EEEEEE;
     height: 100%;
@@ -232,20 +233,24 @@ h1 span.g, h1 span.o {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #930a0a;
-    height: 100%;
+    background-color: #5d8ecf;
+    height: 5%;
     width: 100%;
 }
 
 .progress-bar {
-    height: 20px;
-    background: #1da1f2;
+    height: 100%;
+    background: #ffffff;
     box-shadow: 2px 14px 15px -7px rgba(30, 166, 250, 0.36);
-    border-radius: 50px;
+    border-radius: 2%;
     transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gallery-picture{
-    visibility: hidden;
+    height: 95%;
+    width: 100%;
 }
   
