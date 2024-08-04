@@ -19,6 +19,13 @@
     font-style: normal; 
 }
 
+@font-face {
+    font-family: 'FuturaBold';
+    src: url('../fonts/FuturaStdBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal; 
+}
+
 :root{
     --color-palette-1: #11e195;
     --color-palette-2: #ffffff;
@@ -191,9 +198,11 @@ h1 span.g, h1 span.o {
 }
 
 .window .window-body .window-content p{
-    font: 1.0em 'SF Pro Display', sans-serif;
+    font: 1.0em 'FuturaBold', sans-serif;
     color: #EEEEEE;
     padding: 20px;
+    font-size: 1.5em;
+    text-align: justify;
 }
 
 .download-button{

@@ -28,6 +28,7 @@ class ProgressBar {
 
     startTo(step, time) {
         if (this.intervalCode !== 0) return;
+        console.log('Starting progress bar');
         this.intervalCode = setInterval(() => {
             if (this.now + step > this.max) {
                 this.now = this.max;
@@ -190,7 +191,7 @@ class Window {
                     this.changeGalleryPicture = this.changeGalleryPicture.bind(this); // Bind context
                     this.resetTimer = this.resetTimer.bind(this); // Bind context
                     this.timer = setInterval(this.changeGalleryPicture, 5000);
-                    this.progressBar = new ProgressBar(10, 0, 100);
+                    this.progressBar = new ProgressBar(10, 10, 100);
                     this.windowElement.querySelector(".timer-bar-container").appendChild(this.progressBar.dom);
                     this.progressBar.startTo(10, 500);
                     setTimeout(() => {
@@ -212,7 +213,7 @@ class Window {
     resetTimer() {
         clearInterval(this.timer);
         this.timer = setInterval(this.changeGalleryPicture.bind(this), 5000); // Bind context again
-        this.progressBar.restart(5, 500);
+        this.progressBar.restart(10, 500);
     }
 }
 
@@ -260,11 +261,26 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     `;
 
-    let pictureRatio = 1.5;
+    const HTMLCONTENT3 = `
+    <p>
+        GlassOverflow is my SPH fluid physic-based game. I developed it along with two friends for our final Master's 1 project.
+        The game is developed in C++ from scratch, using the OpenGL library and ImGUI for the UI.
+        I was mainly responsible for the fluid SPH real time simulation research and implementation, and level design plus gameplay design.
+    </p>
+    `;
 
-    new Window('DOWNLOAD', HTMLCONTENT1, maxX * 1.0 / 10.0, maxY * 7.0 / 10.0, 600, 400, 900, 600);
-    new Window('GALLERY', HTMLCONTENT2, maxX * 4.5 / 10.0, maxY * 1.0 / 10.0, maxX * 1.4 / 10.0, maxY * 1.0 / 2.5, maxX * 1.4 / 10.0 * pictureRatio, maxY * 1.0 / 2.5 * pictureRatio, { specialType: 'gallery', galleryImages: galleryPictures });
-    new Window('Window 3', 'This is the content of Window 3', maxX * 8.0 / 10.0, maxY * 5.0 / 10.0, 400, 200, 800, 400);
+    let pictureRatio2 = 1.8;
+    let pictureRatio1 = 1.3;
+
+    let downloadRatio2 = 1.8;
+    let downloadRatio1 = 1.3;
+
+    let textRatio2 = 1.8;
+    let textRatio1 = 1.5;
+
+    new Window('DOWNLOAD', HTMLCONTENT1, maxX * 5.0 / 10.0, maxY * 6.0 / 10.0, maxX * 1.0 / 10.0 * downloadRatio1, maxY * 2.0 / 10.0 * downloadRatio1, maxX * 1.0 / 10.0 * downloadRatio2, maxY * 2.0 / 10.0 * downloadRatio2);
+    new Window('GALLERY', HTMLCONTENT2, maxX * 0.5 / 10.0, maxY * 1.0 / 10.0, maxY * 1.0 / 3.5 * pictureRatio1, maxY * 1.0 / 2.5 * pictureRatio1, maxY * 1.0 / 3.5 * pictureRatio2, maxY * 1.0 / 2.5 * pictureRatio2, { specialType: 'gallery', galleryImages: galleryPictures });
+    new Window('Window 3', HTMLCONTENT3, maxX * 4.0 / 10.0, maxY * 0.5 / 10.0, maxX * 2.0 / 10.0 * textRatio1, maxY * 1.6 / 10.0 * textRatio1, maxX * 2.0 / 10.0 * textRatio2, maxY * 1.6 / 10.0 * textRatio2);
 });
 
 function downloadGame() {
