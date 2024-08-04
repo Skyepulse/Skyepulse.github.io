@@ -75,6 +75,18 @@ class Window {
             this.index = 0;
         }
 
+        if (options.fontSize) {
+            this.fontSize = options.fontSize;
+        }
+
+        if (options.upFontSize) {
+            this.upFontSize = options.upFontSize;
+        }
+
+        if (options.fontColor) {
+            this.fontColor = options.fontColor;
+        }
+
         this.title = title;
         this.contentHTML = contentHTML;
         this.windowElement = null;
@@ -158,6 +170,12 @@ class Window {
                         this.windowElement.style.width = `${this.width}px`;
                         this.windowElement.style.height = `${this.height}px`;
                         this.maximized = false;
+                        if(this.upFontSize){
+                            let pElements = windowElement.querySelectorAll('p');
+                            pElements.forEach(p => {
+                                p.style.fontSize = this.fontSize;
+                            });
+                        }
                     }
                 });
 
@@ -171,6 +189,13 @@ class Window {
                         this.windowElement.style.width = `${this.width2}px`;
                         this.windowElement.style.height = `${this.height2}px`;
                         this.maximized = true;
+                        if(this.upFontSize){
+                            console.log('Up font size');
+                            let pElements = windowElement.querySelectorAll('p');
+                            pElements.forEach(p => {
+                                p.style.fontSize = this.upFontSize;
+                            });
+                        }
                     }
                 });
 
@@ -190,14 +215,32 @@ class Window {
                     this.index = 0;
                     this.changeGalleryPicture = this.changeGalleryPicture.bind(this); // Bind context
                     this.resetTimer = this.resetTimer.bind(this); // Bind context
-                    this.timer = setInterval(this.changeGalleryPicture, 5000);
+                    this.timer = setInterval(this.changeGalleryPicture.bind(this), 5000);
                     this.progressBar = new ProgressBar(10, 10, 100);
                     this.windowElement.querySelector(".timer-bar-container").appendChild(this.progressBar.dom);
                     this.progressBar.startTo(10, 500);
                     setTimeout(() => {
                         this.progressBar.end()
                     }, 5000);
+
+                    windowElement.querySelector('.gallery-picture').addEventListener('click', this.changeGalleryPicture);
                 }
+
+                if (this.fontSize) {
+                    let pElements = windowElement.querySelectorAll('p');
+                    pElements.forEach(p => {
+                        p.style.fontSize = this.fontSize;
+                    });
+                }
+
+                if (this.fontColor) {
+                    let pElements = windowElement.querySelectorAll('p');
+                    pElements.forEach(p => {
+                        p.style.color = this.fontColor;
+                    });
+                }
+
+                this.windowElement.style.visibility = 'hidden';
             })
             .catch(error => console.error('Error fetching Handlebars template:', error));
     }
@@ -214,6 +257,25 @@ class Window {
         clearInterval(this.timer);
         this.timer = setInterval(this.changeGalleryPicture.bind(this), 5000); // Bind context again
         this.progressBar.restart(10, 500);
+    }
+
+
+    popUpAnimation() {
+        this.windowElement.style.transform = 'scale(0.1)';
+        this.windowElement.style.visibility = 'visible';
+
+        //add animation of scale from 0.1 to 1.2 then back to one in a smooth way
+        let scale = 0.1;
+        let scaleStep = 0.2;
+        let scaleInterval = setInterval(() => {
+            if (scale >= 1.0) {
+                clearInterval(scaleInterval);
+                this.windowElement.style.transform = 'scale(1)';
+                return;
+            }
+            scale += scaleStep;
+            this.windowElement.style.transform = `scale(${scale})`;
+        }, 50);
     }
 }
 
@@ -247,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('click', () => {
-        logDimensions('Click');
+        //logDimensions('Click');
     });
 
     const HTMLCONTENT1 = `
@@ -263,9 +325,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const HTMLCONTENT3 = `
     <p>
-        GlassOverflow is my SPH fluid physic-based game. I developed it along with two friends for our final Master's 1 project.
+        GlassOverflow is my pixel art SPH fluid physic-based game. I developed it along with two friends for our final Master's 1 project.
         The game is developed in C++ from scratch, using the OpenGL library and ImGUI for the UI.
         I was mainly responsible for the fluid SPH real time simulation research and implementation, and level design plus gameplay design.
+    </p>
+    `;
+
+    const HTMLCONTENT4 = `
+    <div class='GOVideo-container'>
+        <video loop autoplay muted>
+            <source src = "https://githubpagesvideos.s3.eu-north-1.amazonaws.com/GlassOverflowDemo.mp4" type = "video/mp4">
+            This browser does not support the video tag.
+        </video>
+    </div>
+    `;
+
+    const HTMLCONTENT5 = `
+    <p>
+        [1] Bender, Jan Koschier, Dan. (2016). Divergence-Free SPH for Incompressible and
+            Viscous Fluids. IEEE Transactions on Visualization and Computer Graphics. 23.
+            1-1. 10.1109/TVCG.2016.2578335.
+    </p>
+    <p>
+        [2] Yan, H., Wang, Z., He, J., Chen, X., Wang, C., Peng, Q. (2009). Real-time fluid
+            simulation with adaptive SPH. Computer Animation and Virtual Worlds, 20(2-3),
+            417–426. doi:10.1002/cav.300.
     </p>
     `;
 
@@ -278,9 +362,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let textRatio2 = 1.8;
     let textRatio1 = 1.5;
 
-    new Window('DOWNLOAD', HTMLCONTENT1, maxX * 5.0 / 10.0, maxY * 6.0 / 10.0, maxX * 1.0 / 10.0 * downloadRatio1, maxY * 2.0 / 10.0 * downloadRatio1, maxX * 1.0 / 10.0 * downloadRatio2, maxY * 2.0 / 10.0 * downloadRatio2);
+    let videoRatio2 = 2.5;
+    let videoRatio1 = 2.1;
+
+    let researchRatio2 = 1.8;
+    let researchRatio1 = 1.5;
+
+    new Window('DOWNLOAD', HTMLCONTENT1, maxX * 3.0 / 10.0, maxY * 6.0 / 10.0, maxX * 1.0 / 10.0 * downloadRatio1, maxY * 2.0 / 10.0 * downloadRatio1, maxX * 1.0 / 10.0 * downloadRatio2, maxY * 2.0 / 10.0 * downloadRatio2);
     new Window('GALLERY', HTMLCONTENT2, maxX * 0.5 / 10.0, maxY * 1.0 / 10.0, maxY * 1.0 / 3.5 * pictureRatio1, maxY * 1.0 / 2.5 * pictureRatio1, maxY * 1.0 / 3.5 * pictureRatio2, maxY * 1.0 / 2.5 * pictureRatio2, { specialType: 'gallery', galleryImages: galleryPictures });
-    new Window('Window 3', HTMLCONTENT3, maxX * 4.0 / 10.0, maxY * 0.5 / 10.0, maxX * 2.0 / 10.0 * textRatio1, maxY * 1.6 / 10.0 * textRatio1, maxX * 2.0 / 10.0 * textRatio2, maxY * 1.6 / 10.0 * textRatio2);
+    new Window('WHAT IS GLASSOVERFLOW', HTMLCONTENT3, maxX * 3.4 / 10.0, maxY * 0.5 / 10.0, maxX * 2.0 / 10.0 * textRatio1, maxY * 1.6 / 10.0 * textRatio1, maxX * 2.0 / 10.0 * textRatio2, maxY * 1.6 / 10.0 * textRatio2);
+    new Window('VIDEO', HTMLCONTENT4, maxX * 6.2 / 10.0, maxY * 5.3 / 10.0, maxY * 1.0 / 3.0 * videoRatio1, maxY * 1.0 / 5.0 * videoRatio1, maxY * 1.0 / 3.0 * videoRatio2, maxY * 1.0 / 5.0 * videoRatio2);
+    new Window('RESEARCH PAPERS', HTMLCONTENT5, maxX * 7.0 / 10.0, maxY * 1.0 / 10.0, maxX * 1.7 / 10.0 * researchRatio1, maxY * 2.0 / 10.0 * researchRatio1, maxX * 1.7 / 10.0 * researchRatio2, maxY * 2.0 / 10.0 * researchRatio2, {'fontSize': '1.2em', 'upFontSize': '1.5em', 'fontColor': '#BC871A'});
+
+    for (i = 0; i < windows.length; i++) {
+        let popupAnimationTimer = setTimeout(windows[i].popUpAnimation.bind(windows[i]), (i + 1) * 500);
+    }
 });
 
 function downloadGame() {

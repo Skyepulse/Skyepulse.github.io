@@ -211,7 +211,7 @@ h1 span.g, h1 span.o {
     align-items: center;
     background-color: #c0aa1c;
     color: #EEEEEE;
-    font: 2.0em 'SF Pro Display', sans-serif;
+    font: 2.0em 'FuturaBold', sans-serif;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -262,4 +262,17 @@ h1 span.g, h1 span.o {
     height: 95%;
     width: 100%;
 }
-  
+
+.GOVideo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+}
+
+.GOVideo-container video{
+    height: 100%;
+    width: 100%;
+}

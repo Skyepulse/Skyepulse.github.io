@@ -8,7 +8,7 @@ let GoLeft = false;
 
 const mediaUrl = '../media/';
 const htmlUrl = '../HTMLContents/Projects/';
-const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png', mediaUrl + 'slider1.png', mediaUrl + 'kmk.png', mediaUrl + 'projects1.png']
+const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png', mediaUrl + 'slider1.png', mediaUrl + 'kmk.png', mediaUrl + 'GO4.png']
 const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife', 'Slider\'s Adventure', 'Kiss Marry Kill', 'GlassOverflow']
 const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%', '500%', '500%', '500%']
 const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'ecolife.html', htmlUrl + 'slider.html', 'https://matelou.itch.io/kiss-marry-kill', htmlUrl + 'Glassoverflow.html'];
