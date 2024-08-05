@@ -201,7 +201,7 @@ h1 span.g, h1 span.o {
     font: 1.0em 'FuturaBold', sans-serif;
     color: #EEEEEE;
     padding: 20px;
-    font-size: 1.5em;
+    font-size: 0.85vw;
     text-align: justify;
 }
 
@@ -211,7 +211,7 @@ h1 span.g, h1 span.o {
     align-items: center;
     background-color: #c0aa1c;
     color: #EEEEEE;
-    font: 2.0em 'FuturaBold', sans-serif;
+    font: 1.0vw 'FuturaBold', sans-serif;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;

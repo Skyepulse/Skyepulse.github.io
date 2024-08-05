@@ -369,10 +369,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let researchRatio1 = 1.5;
 
     new Window('DOWNLOAD', HTMLCONTENT1, maxX * 3.0 / 10.0, maxY * 6.0 / 10.0, maxX * 1.0 / 10.0 * downloadRatio1, maxY * 2.0 / 10.0 * downloadRatio1, maxX * 1.0 / 10.0 * downloadRatio2, maxY * 2.0 / 10.0 * downloadRatio2);
-    new Window('GALLERY', HTMLCONTENT2, maxX * 0.5 / 10.0, maxY * 1.0 / 10.0, maxY * 1.0 / 3.5 * pictureRatio1, maxY * 1.0 / 2.5 * pictureRatio1, maxY * 1.0 / 3.5 * pictureRatio2, maxY * 1.0 / 2.5 * pictureRatio2, { specialType: 'gallery', galleryImages: galleryPictures });
+    new Window('GALLERY', HTMLCONTENT2, maxX * 0.5 / 10.0, maxY * 1.0 / 10.0, maxY * 1.0 / 3.5 * pictureRatio1, maxY * 1.0 / 2.5 * pictureRatio1, maxY * 1.0 / 3.5 * pictureRatio2, maxY * 1.0 / 2.5 * pictureRatio2, { specialType: 'gallery', galleryImages: galleryPictures, 'fontSize' : '0.8vw', 'upFontSize': '0.9vw', 'fontColor': 'white'});
     new Window('WHAT IS GLASSOVERFLOW', HTMLCONTENT3, maxX * 3.4 / 10.0, maxY * 0.5 / 10.0, maxX * 2.0 / 10.0 * textRatio1, maxY * 1.6 / 10.0 * textRatio1, maxX * 2.0 / 10.0 * textRatio2, maxY * 1.6 / 10.0 * textRatio2);
     new Window('VIDEO', HTMLCONTENT4, maxX * 6.2 / 10.0, maxY * 5.3 / 10.0, maxY * 1.0 / 3.0 * videoRatio1, maxY * 1.0 / 5.0 * videoRatio1, maxY * 1.0 / 3.0 * videoRatio2, maxY * 1.0 / 5.0 * videoRatio2);
-    new Window('RESEARCH PAPERS', HTMLCONTENT5, maxX * 7.0 / 10.0, maxY * 1.0 / 10.0, maxX * 1.7 / 10.0 * researchRatio1, maxY * 2.0 / 10.0 * researchRatio1, maxX * 1.7 / 10.0 * researchRatio2, maxY * 2.0 / 10.0 * researchRatio2, {'fontSize': '1.2em', 'upFontSize': '1.5em', 'fontColor': '#BC871A'});
+    new Window('RESEARCH PAPERS', HTMLCONTENT5, maxX * 7.0 / 10.0, maxY * 1.0 / 10.0, maxX * 1.7 / 10.0 * researchRatio1, maxY * 2.0 / 10.0 * researchRatio1, maxX * 1.7 / 10.0 * researchRatio2, maxY * 2.0 / 10.0 * researchRatio2, {'fontSize': '0.8vw', 'upFontSize': '0.9vw', 'fontColor': '#BC871A'});
 
     for (i = 0; i < windows.length; i++) {
         let popupAnimationTimer = setTimeout(windows[i].popUpAnimation.bind(windows[i]), (i + 1) * 500);
