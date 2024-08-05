@@ -12,6 +12,8 @@ const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', m
 const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife', 'Slider\'s Adventure', 'Kiss Marry Kill', 'GlassOverflow']
 const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%', '500%', '500%', '500%']
 const URLS = [htmlUrl + '3DSimulator.html', 'https://matelou.itch.io/alice-the-wonder-game', htmlUrl + 'OpenGL.html', 'https://rooms.xyz/elmrysmordred/steamroom', htmlUrl + 'ecolife.html', htmlUrl + 'slider.html', 'https://matelou.itch.io/kiss-marry-kill', htmlUrl + 'GlassOverflow.html'];
+const positions = [0, 7, 4, 6, 2, 5, 3, 1];
+
 // Interactive Div
 let interactiveDiv = null;
 let ProjectTitle = null;
@@ -90,21 +92,18 @@ function rotate(rotateN = 1, goleft = false) {
     if(rotateNum > 0){
         rotationInProgress = true;
         GoLeft = goleft;
-        //console.log('rotatingLeft: ' + GoLeft);
         if(goleft){
             rotateTimes = (rotateTimes - 1);
             if(rotateTimes < 0) rotateTimes = SelectionButtons.length - 1;
         } else {
-            rotateTimes = (rotateTimes + 1)%SelectionButtons.length;
+            rotateTimes = (rotateTimes + 1) % SelectionButtons.length;
         }
-        
         
         if(interactiveDiv){
             interactiveDiv.style.display = 'none';
-            interactiveDiv.style.backgroundImage = 'url(' + projectImages[rotateTimes] + ')';
-            console.log('projectImages[rotateTimes]: ' + projectImages[rotateTimes]);
-            ProjectTitle.innerHTML = projectDescriptions[rotateTimes];
-            ProjectTitle.style.fontSize = projectDescriptionSizes[rotateTimes];
+            interactiveDiv.style.backgroundImage = 'url(' + projectImages[positions[rotateTimes]] + ')';
+            ProjectTitle.innerHTML = projectDescriptions[positions[rotateTimes]];
+            ProjectTitle.style.fontSize = projectDescriptionSizes[positions[rotateTimes]];
         } 
         rotateNum--;
     }
@@ -238,7 +237,7 @@ function initializeWebGL(){
     ProjectTitle = document.getElementById('projectTitle');
 
     interactiveDiv.addEventListener('click', () => {
-        loadNewPage(URLS[rotateTimes]);
+        loadNewPage(URLS[positions[rotateTimes]]);
     });
     scene = new THREE.Scene();
     scene.background = new THREE.Color('#28282B');
