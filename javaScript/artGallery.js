@@ -234,7 +234,10 @@ class ArtObject{
                 renderer2.render(scene2, camera2);
 
                 this.isFullyLoaded = true;
-                console.log("Art object loaded successfully");
+                console.log("hideLoader");
+                hideLoader();
+                this.showArtObject();
+
             }).catch((error) => {
                 console.error("Failed to load art object", error);
             });
@@ -250,20 +253,35 @@ class ArtObject{
     }
 
     rotateArtObject(x, y, z){
+        if(!this.isFullyLoaded) return;
         for(let i = 0; i < this.objects.length; i++){
             this.objects[i].rotateObject(x, y, z);
         }
     }
 
     moveArtObject(x, y, z){
+        if(!this.isFullyLoaded) return;
         for(let i = 0; i < this.objects.length; i++){
             this.objects[i].moveObject(x, y, z);
         }
     }
 
     scaleArtObject(x, y, z){
+        if(!this.isFullyLoaded) return;
         for(let i = 0; i < this.objects.length; i++){
             this.objects[i].scaleObject(x, y, z);
+        }
+    }
+
+    showArtObject(){
+        for(let i = 0; i < this.objects.length; i++){
+            this.objects[i].object.visible = true;
+        }
+    }
+
+    hideArtObject(){
+        for(let i = 0; i < this.objects.length; i++){
+            this.objects[i].object.visible = false;
         }
     }
 }
@@ -282,6 +300,8 @@ class Objectart{
 
     initializeTexture(){
         return new Promise((resolve, reject) => {
+            console.log("showLoader");
+            showLoader();
             if(this.texturepath == null){
                 resolve(null);
                 return;
@@ -322,6 +342,8 @@ class Objectart{
 
                 object.scale.set(this.scales[0], this.scales[1], this.scales[2]);
                 this.object = object;
+                //Set visibility of object to false before adding to scene
+                this.object.visible = false;
                 scene2.add(object);
                 resolve(gltf);
             }, undefined, (error) => {
@@ -435,6 +457,9 @@ onMouseMove = function(event){
         let mouseDelta = [mouseposition[0] - mouseInitialPosition[0], mouseposition[1] - mouseInitialPosition[1]];
         //console.log("Deltax: " + mouseDelta[0] + "// Deltay: " + mouseDelta[1]);
         let toRenderObject = toRenderObjects[renderedArtObject];
+
+        if(!toRenderObject.isFullyLoaded) return;
+
         toRenderObject.rotateArtObject(toRenderObject.objects[0].object.rotation.x + RotationPerUnit * mouseDelta[1], toRenderObject.objects[0].object.rotation.y + RotationPerUnit *mouseDelta[0], 0);
         mouseInitialPosition = mouseposition;
     } else if(isSphereClickedFlag){
@@ -674,4 +699,22 @@ function addPointLight(){
     scene2.add(sphere);
 
     renderer2.render(scene2, camera2);
+}
+
+let shownLoader = false;
+
+function showLoader(){
+    if(shownLoader)
+        return;
+    let loader = document.getElementById('loader');
+    loader.style.display = "block";
+    shownLoader = true;
+}
+
+function hideLoader(){
+    if(!shownLoader)
+        return;
+    let loader = document.getElementById('loader');
+    loader.style.display = "none";
+    shownLoader = false;
 }
