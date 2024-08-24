@@ -105,6 +105,11 @@ window.onload = function() {
     position_cable_2();
     ready_bolts_hidebar();
     loadContent('HTMLContents/home.html');
+    showSite();
+}
+
+function showSite(){
+    document.body.style.visibility = 'visible';
 }
 
 window.addEventListener('resize', function() {
@@ -114,10 +119,6 @@ window.addEventListener('resize', function() {
     resizeDetails();
 }, false);
 
-
-/*window.addEventListener('mouseover', function(event) {
-    console.log(event.target);
-});*/
 
 function position_cable_2(){
     const leftRect = switchP.getBoundingClientRect();
@@ -186,6 +187,7 @@ function ready_bolts_hidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
     let hideClicks = document.getElementsByClassName('HideClick');
     hideClicks[0].addEventListener('click', function() {
         if(pageNumber != 0){
@@ -333,4 +335,15 @@ function loadDetailsContent3(){
         alreadyLoaded3 = true;
     }
 
+}
+
+//Loaded Callback Method
+
+function giveLoadedCallback(media){
+    if(media.complete) loaded(media.id);
+    else media.addEventListener('load', loaded);
+}
+
+function loaded(message){
+    console.log(message, "has been loaded!");
 }
