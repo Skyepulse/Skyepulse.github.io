@@ -12,3 +12,4 @@
 # Ignore specific directories
 wamplanguages/
 wampthemes/
+*.bat

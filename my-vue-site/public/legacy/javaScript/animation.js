@@ -6,8 +6,8 @@ let rotateTimes = 0;
 let rotateNum = 0;
 let GoLeft = false;
 
-const mediaUrl = '../media/';
-const htmlUrl = '../HTMLContents/Projects/';
+const mediaUrl = 'media/';
+const htmlUrl = 'HTMLContents/Projects/';
 const projectImages = [mediaUrl + 'projects1.png', mediaUrl + 'projects2.png', mediaUrl + 'OpenGLHeader.png', mediaUrl + 'steamRoom.png', mediaUrl + 'ecolife.png', mediaUrl + 'slider1.png', mediaUrl + 'kmk.png', mediaUrl + 'GO4.png']
 const projectDescriptions = ['3D Robot Simulator', 'Alice the WonderGame', 'OpenGL Projects', 'Rooms.XYZ', 'Ecolife', 'Slider\'s Adventure', 'Kiss Marry Kill', 'GlassOverflow']
 const projectDescriptionSizes = ['500%', '450%', '500%', '500%', '500%', '500%', '500%', '500%']

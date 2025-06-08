@@ -1,4 +1,4 @@
-const modelUrl = "../models/"; 
+const modelUrl = "models/"; 
 const toRenderObjects = [];
 //360 rotation per 250 units
 const RotationPerUnit = degreesToRadians(360) / 250;
