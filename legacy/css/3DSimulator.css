@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'VGAR';
+    src: url('fonts/VGAR/V-GERBbold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'VGAR';
+    src: url('fonts/VGAR/V-GERBlight.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Voyager';
+    src: url('fonts/VGAR/Voyager Grotesque.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+}
+
+:root{
+    --color-palette-1: #eeeeee;
+    --color-palette-2: #aee4ed;
+    --color-palette-3: #5fb7cf;
+    --color-palette-4: #5a79c8;
+    --color-palette-5: #3c339a;
+
+    --BackGround: #eeeeee;
+
+    --bodyTextWidth: 90vw;
+    --smallTextWidth: 30vw;
+    --videoContainerWidth: 60vw;
+}
+
+body{
+    position: relative;
+    background-image: linear-gradient(135deg, rgba(238,238,238,1) 0%, rgba(238,238,238,1) 40%, rgba(41,196,218,1) 40%, rgba(41,196,218,1) 46%, rgba(238,238,238,1) 46%, rgba(238,238,238,1) 84%, rgba(174,228,237,1) 84%, rgba(95,183,207,1) 88%, rgba(90,121,200,1) 88%, rgba(60,51,154,1) 93%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    position: relative;
+    font-family: 'DO Futuristic', sans-serif;
+    font-size: 4em;
+    color: 	white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    top: 10px;
+    text-shadow: 1px 1px 0 var(--color-palette-3),
+    -1px 1px 0 var(--color-palette-3),
+    1px -1px 0 var(--color-palette-3),
+    -1px -1px 0 var(--color-palette-3),
+    0px 1px 0 var(--color-palette-3),
+    0px -1px 0 var(--color-palette-3),
+    -1px 0px 0 var(--color-palette-3),
+    1px 0px 0 var(--color-palette-3),
+    2px 2px 0 var(--color-palette-3),
+    -2px 2px 0 var(--color-palette-3),
+    2px -2px 0 var(--color-palette-3),
+    -2px -2px 0 var(--color-palette-3),
+    0px 2px 0 var(--color-palette-3),
+    0px -2px 0 var(--color-palette-3),
+    -2px 0px 0 var(--color-palette-3),
+    2px 0px 0 var(--color-palette-3),
+    1px 2px 0 var(--color-palette-3),
+    -1px 2px 0 var(--color-palette-3),
+    1px -2px 0 var(--color-palette-3),
+    -1px -2px 0 var(--color-palette-3),
+    2px 1px 0 var(--color-palette-3),
+    -2px 1px 0 var(--color-palette-3),
+    2px -1px 0 var(--color-palette-3),
+    -2px -1px 0 var(--color-palette-3); 
+}
+
+.BodyText{
+    font-family: 'VGAR', sans-serif;
+    font-weight: bold;
+    font-size: 1.5vw;
+    position: relative;
+    align-content: center;
+    text-align: justify;
+    margin-top: 20px;
+    width: var(--bodyTextWidth);
+    
+    color: var(--color-palette-5);
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#mainText{
+    left: calc(50% - var(--bodyTextWidth)/2);
+    height: auto;
+}
+
+#smallText{
+    color: white;
+    text-align: center;
+    font-size: 1.6vw;
+    margin-top: 0px;
+    padding: 5px;
+    width: var(--smallTextWidth);
+    height: auto;
+    border-radius: 20px;
+    -webkit-background-clip: none;
+    border: 2px solid var(--color-palette-5);
+    background: #00917b9a;
+}
+
+.button-container{
+    position: relative;
+    display: flex;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: #bfd83482;
+    height: auto;
+    width: auto;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 2.5px solid #00AEAD;
+}
+
+.button-container button{
+    position: relative;
+    font-family: 'VGAR', sans-serif;
+    font-weight: bold;
+    font-size: 1.5vw;
+    background-color: #FFFF00;
+    color: white;
+    border-radius: 20px;
+    border: 2.5px solid black;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+}
+
+.button-container button:hover{
+    background-color: #00AEAD;
+    color: white;
+}
+
+.verticalContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-container{
+    width: var(--videoContainerWidth); /* or any specific size */
+    overflow: hidden;
+    border-radius: 30px;
+    flex-grow: 1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will ensure that the video covers the whole container */
+}
+
+.smallPadding{
+    position: relative;
+    padding: 10px;
+}
+
+.centeringDiv{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: space-around;
+    width: 80vw;
+    left: calc(50% - 40vw);
+    flex-grow: 1;
+    height: 25.3vw;
+}

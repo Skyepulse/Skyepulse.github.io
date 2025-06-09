@@ -1,0 +1,278 @@
+@font-face {
+    font-family: 'VGAR';
+    src: url('../fonts/VGAR/V-GERBbold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'VGAR';
+    src: url('../fonts/VGAR/V-GERBlight.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Voyager';
+    src: url('../fonts/VGAR/Voyager Grotesque.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'FuturaBold';
+    src: url('../fonts/FuturaStdBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal; 
+}
+
+:root{
+    --color-palette-1: #11e195;
+    --color-palette-2: #ffffff;
+    --color-palette-3: #5fb7cf;
+    --color-palette-4: #5a79c8;
+    --color-palette-5: #000000;
+
+    --BackGround: #eeeeee;
+
+    --bodyTextWidth: 90vw;
+    --smallTextWidth: 30vw;
+    --videoContainerWidth: 60vw;
+}
+
+body{
+    position: relative;
+    background: rgb(3,6,55);
+    background: linear-gradient(124deg, rgba(3,6,55,1) 0%, rgba(60,7,83,1) 25%, rgba(113,55,98,1) 52%, rgba(60,7,83,1) 82%, rgba(3,6,55,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    position: relative;
+    font-family: 'DO Futuristic', sans-serif;
+    font-size: 10em;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: var(--color-palette-3);
+    text-shadow: 1px 1px 0 var(--color-palette-5),
+    -1px 1px 0 var(--color-palette-5),
+    1px -1px 0 var(--color-palette-5),
+    -1px -1px 0 var(--color-palette-5),
+    0px 1px 0 var(--color-palette-5),
+    0px -1px 0 var(--color-palette-5),
+    -1px 0px 0 var(--color-palette-5),
+    1px 0px 0 var(--color-palette-5),
+    2px 2px 0 var(--color-palette-5),
+    -2px 2px 0 var(--color-palette-5),
+    2px -2px 0 var(--color-palette-5),
+    -2px -2px 0 var(--color-palette-5),
+    0px 2px 0 var(--color-palette-5),
+    0px -2px 0 var(--color-palette-5),
+    -2px 0px 0 var(--color-palette-5),
+    2px 0px 0 var(--color-palette-5),
+    1px 2px 0 var(--color-palette-5),
+    -1px 2px 0 var(--color-palette-5),
+    1px -2px 0 var(--color-palette-5),
+    -1px -2px 0 var(--color-palette-5),
+    2px 1px 0 var(--color-palette-5),
+    -2px 1px 0 var(--color-palette-5),
+    2px -1px 0 var(--color-palette-5),
+    -2px -1px 0 var(--color-palette-5);
+}
+
+h1 span {
+    color:var(--color-palette-3);
+}
+
+h1 span.g, h1 span.o {
+    color:var(--color-palette-4);
+}
+
+.window{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+    border-radius: 2.5%;
+    overflow: hidden;
+}
+
+.window .title-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #EEEEEE;
+    height: 30px;
+    align-items: center;
+    font: 100% 'SF Pro Display', sans-serif;
+    font-weight: bold;
+}
+
+.window .title-bar .title-bar-controls{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 5px;
+    height: 100%;
+}
+
+.window .title-bar .title-bar-empty{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 5px;
+    height: 100%;
+}
+
+.title-bar-button{
+    height: 60%;
+    border-radius: 100%;
+    margin : 0 5px;
+}
+
+.title-bar-button:hover{
+    cursor: pointer;
+}
+
+.title-bar-empty .title-bar-button{
+    background-color: #EEEEEE;
+    border: #EEEEEE;
+    pointer-events: none;
+}
+
+.minimize{
+    background-color: #FFBD44;
+}
+
+.minimize:hover{
+    background-color: #FFBD44;
+}
+
+.maximize{
+    background-color: #28CA42;
+}
+
+.maximize:hover{
+    background-color: #28CA42;
+}
+
+.close{
+    background-color: #FF605F;
+}
+
+.close:hover{
+    background-color: #FF605F;
+}
+
+.window .window-body{
+    display: flex;
+    background: rgb(255,68,234);
+    background: linear-gradient(90deg, rgba(255,68,234,1) 0%, rgba(57,0,119,1) 50%, rgba(53,227,255,1) 100%);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.window .window-body .window-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 90%;
+    background: rgb(115,38,106);
+    background: linear-gradient(90deg, rgba(115,38,106,1) 0%, rgba(31,2,61,1) 50%, rgba(33,108,120,1) 100%);
+}
+
+.window .window-body .window-content p{
+    font: 1.0em 'FuturaBold', sans-serif;
+    color: #EEEEEE;
+    padding: 20px;
+    font-size: 0.75vw;
+    text-align: justify;
+}
+
+.download-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c0aa1c;
+    color: #EEEEEE;
+    font: 1.0vw 'FuturaBold', sans-serif;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.download-button:hover{
+    cursor: pointer;
+    background-color: #908015;
+    scale: 1.05;
+}
+
+.download-button:active{
+    background-color: #c0aa1c;
+    transform: translate(0, 5px);
+}
+
+.gallery-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    background-color: #EEEEEE;
+    height: 100%;
+    width: 100%;
+}
+
+.timer-bar-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5d8ecf;
+    height: 5%;
+    width: 100%;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 2px 14px 15px -7px rgba(30, 166, 250, 0.36);
+    border-radius: 2%;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-picture{
+    height: 95%;
+    width: 100%;
+}
+
+.GOVideo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+}
+
+.GOVideo-container video{
+    height: 100%;
+    width: 100%;
+}

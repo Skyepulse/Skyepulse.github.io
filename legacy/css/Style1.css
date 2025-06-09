@@ -1,0 +1,1089 @@
+@font-face {
+    font-family: 'Starship';
+    src: url('../fonts/StarshipGrunge.otf') format('opentype'),
+         url('../fonts/StarshipGrunge.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+:root{
+    --color-palette-1: #11101A;
+    --color-palette-2: #2F2E3F;
+    --color-palette-3: #5851D5;
+    --color-palette-4: #FF9652;
+    --color-palette-5: #FFF92F;
+
+    --color2-palette-1: #ab7633;
+    --color2-palette-2: #e7d485;
+    --color2-palette-3: #6d2316;
+    --color2-palette-4: #ceae7d;
+    --color2-palette-5: #85432d;
+    --color2-palette-6: #BFAE9D;
+
+    --nextButtonHeight: 35px;
+    --nextButtonWidth: 140px;
+
+    --backgroundColor: #28282B;
+    --arrowColor: #FF9652;
+    --arrowBorderColor: #28282B;
+
+    --ArrowPosition: calc(30% - var(--nextButtonWidth)/2);
+
+    --Arrow1: 20%;
+
+    --lightButtonDimension: clamp(30px, 5vw, 40px);
+    --lightButtonPosition: 5%;
+}
+
+/*UPPERSIDE*/
+.Overlay{
+    position:absolute;
+    top: 105px;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(0deg,
+    #28282BFF 75%,
+    #28282BCE 80%,
+    #28282BA0 95%,
+    #28282B21 100%
+    );
+    z-index: 1;
+}
+
+.HideBar{
+    position: absolute;
+    height: 30px;
+    width: 102%;
+    bottom: -10%;
+    left: -2%;
+    background-color: var(--color2-palette-1);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    box-shadow: 0px 8px 10px 4px rgba(0, 0, 0, 0.705);
+}
+
+.HideClick{
+    background: linear-gradient(90deg,
+    #f3f5f6 10%,
+    #bbc3ca 40%,
+    #f3f5f6 45%,
+    #bbc3ca 70%,
+    #f3f5f6 78%,
+    #bbc3ca 100%
+    );
+    height: 96%;
+    width: 100px;
+    font-family: 'SteamWreck', sans-serif;
+    font-size: 200%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#HC2{
+    width: 120px;
+}
+
+.HideClick > p{
+    position: relative;
+    top: -130%;
+    pointer-events: none;
+}
+
+.HideClick:hover{
+    background: linear-gradient(90deg,
+    #bbc3ca 10%,
+    #f3f5f6 40%,
+    #bbc3ca 45%,
+    #f3f5f6 70%,
+    #bbc3ca 78%,
+    #f3f5f6 100%
+    );
+    cursor: pointer;
+}
+
+#OverlayContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: #28282B;
+    visibility: hidden;
+}
+
+.UpperSide{
+    position: fixed;
+    top: 0;
+    height: 215px;
+    width: 100%;
+    background-color: #28282B;
+    z-index: 2;
+}
+
+.titleLine > div{
+    padding: auto;
+    margin: auto;
+    height: 240px;
+    width: 240px;
+    top: 0%;
+}
+
+#Cog1Wrapper{
+    pointer-events: none;
+}
+
+#LightBulb{
+    height: auto;
+    width: 150px;
+    position: absolute;
+    transform: scale(1, -1);
+    display: flex;
+    left:70%;
+    z-index: 2;
+}
+
+#IllumLightBulb{
+    height: auto;
+    width: 150px;
+    position: absolute;
+    transform: scale(1, -1);
+    left:70%;
+    filter: none;
+    z-index: 1;
+}
+
+.titleLine{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: start;
+}
+#cog1{
+    height:auto;
+    width: 350px;
+    position: absolute;
+    transform: translate(-20%, -36%);
+    /*filter: drop-shadow(0px 0px 10px #222121);*/
+    pointer-events: none;
+    transition: rotate 1s;
+    z-index: 1;
+}
+
+#cog2{
+    height: auto;
+    width: 140px;
+    position: absolute;
+    transform: translate(-23%, 50%) rotate(9deg);
+    pointer-events: none;
+    transition: rotate 1s;
+    z-index: 2;
+}
+
+#cog3{
+    height: auto;
+    width: 200px;
+    position: absolute;
+    transform: translate(14%, 28%) rotate(11deg);
+    pointer-events: none;
+    transition: rotate 1s;
+    z-index: 2;
+}
+.PaddingTop{
+    position: relative;
+    height: 225px;
+    width: 100%;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+#MainCog{
+    z-index: -13;
+    position: absolute;
+    height: auto;
+    width: 280px;
+    left: calc(50% - 140px);
+    top: -20%;
+    filter: brightness(40%);
+    animation: rotate 10s linear infinite;
+    pointer-events: none;
+}
+
+#lightBulbPlaceHolder{
+    z-index: 1;
+    pointer-events: none;
+}
+
+#MainCogHide{
+    z-index: -12;
+    position: absolute;
+    width: 260px;
+    height: 60px;
+    background-color: #28282B;
+    left: calc(50% - 130px);
+    top: 42%;
+    border-top: black solid 5px;
+}
+
+.TitleText{
+    font-family: 'Steamwreck', sans-serif;
+    font-size: 700%;
+    display: flex;
+    user-select: none;
+    color: var(--color2-palette-5);
+    text-shadow: 1px 1px 0 var(--color2-palette-3),
+    -1px 1px 0 var(--color2-palette-3),
+    1px -1px 0 var(--color2-palette-3),
+    -1px -1px 0 var(--color2-palette-2),
+    0px 1px 0 var(--color2-palette-3),
+    0px -1px 0 var(--color2-palette-3),
+    -1px 0px 0 var(--color2-palette-3),
+    1px 0px 0 var(--color2-palette-3),
+    2px 2px 0 var(--color2-palette-3),
+    -2px 2px 0 var(--color2-palette-3),
+    2px -2px 0 var(--color2-palette-3),
+    -2px -2px 0 var(--color2-palette-3),
+    0px 2px 0 var(--color2-palette-3),
+    0px -2px 0 var(--color2-palette-3),
+    -2px 0px 0 var(--color2-palette-3),
+    2px 0px 0 var(--color2-palette-3),
+    1px 2px 0 var(--color2-palette-3),
+    -1px 2px 0 var(--color2-palette-3),
+    1px -2px 0 var(--color2-palette-3),
+    -1px -2px 0 var(--color2-palette-3),
+    2px 1px 0 var(--color2-palette-3),
+    -2px 1px 0 var(--color2-palette-3),
+    2px -1px 0 var(--color2-palette-3),
+    -2px -1px 0 var(--color2-palette-3);
+}
+
+.Letter{
+    transition: ease-out 1s;;
+    letter-spacing: 8px;
+    transform: translateY(-19%);
+}
+
+.Shadow{
+    transform: scale(1, -1) translateY(45%);
+    color:var(--color2-palette-5);
+    transition: ease-in 5s, ease-out 1s;
+    position: absolute;
+    z-index: -11;
+}
+
+.Wrapper:hover .Letter:hover{
+    transform: translateY(-200%);
+}
+
+.Wrapper:hover .Shadow{
+    opacity: 0;
+    transform: translate(-10%);
+}
+
+#debug{
+    border-color: #222121;
+    border-style: solid;
+    position: absolute;
+    width: 200px;
+    top: 182px;
+    left: 210px;
+}
+
+#pipe1{
+    /*
+    max-x-translate: 33%
+    min-y-translate: 16%
+    max-rotate: 12deg
+    */
+    height: auto;
+    width: 350px;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(33%, 129%) rotate(0deg);
+    transition: rotate 1s, translate 1s;
+    z-index: 4;
+}
+
+#cable1{
+    border-color: chartreuse;
+    position: absolute;
+    left: calc(70% + 70px);
+    top:3%;
+    height: 154px;
+    width: 14%;
+    border-top:5px solid black;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    border-radius: 30px 100px 50px 0;
+}
+
+#cable2{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -16%;
+    border-bottom: 5px solid black;
+    border-radius: 0 0 0 20px;
+    pointer-events: none;
+}
+
+#Switch{
+    width: 60px;
+    height: 30px;
+    background-color: var(--color2-palette-5);
+    position: absolute;
+    border-radius: 100px 100px 100px 100px;
+    z-index: 3;
+}
+
+#SwitchPlacing{
+    height: 30px;
+    width: 120px;
+    position: absolute;
+    border-color: darkgoldenrod;
+    border-style: solid;
+    border-radius: 100px 100px 100px 100px;
+    background-color: black;
+    top:65%;
+    left: 27.3%;
+    z-index: 2;
+}
+/*UPPER SIDE END*/
+
+
+/*HOME*/
+h1{
+    font-family: 'Starship', sans-serif;
+    font-size: 9vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color : var(--color2-palette-2);
+    text-shadow: 1px 1px 0 var(--color2-palette-3),
+    -1px 1px 0 var(--color2-palette-3),
+    1px -1px 0 var(--color2-palette-3),
+    -1px -1px 0 var(--color2-palette-3),
+    0px 1px 0 var(--color2-palette-3),
+    0px -1px 0 var(--color2-palette-3),
+    -1px 0px 0 var(--color2-palette-3),
+    1px 0px 0 var(--color2-palette-3),
+    2px 2px 0 var(--color2-palette-3),
+    -2px 2px 0 var(--color2-palette-3),
+    2px -2px 0 var(--color2-palette-3),
+    -2px -2px 0 var(--color2-palette-3),
+    0px 2px 0 var(--color2-palette-3),
+    0px -2px 0 var(--color2-palette-3),
+    -2px 0px 0 var(--color2-palette-3),
+    2px 0px 0 var(--color2-palette-3),
+    1px 2px 0 var(--color2-palette-3),
+    -1px 2px 0 var(--color2-palette-3),
+    1px -2px 0 var(--color2-palette-3),
+    -1px -2px 0 var(--color2-palette-3),
+    2px 1px 0 var(--color2-palette-3),
+    -2px 1px 0 var(--color2-palette-3),
+    2px -1px 0 var(--color2-palette-3),
+    -2px -1px 0 var(--color2-palette-3); 
+}
+
+.PicWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: -30;
+    flex-direction: row-reverse;
+}
+
+#IDPic{
+    height: 350px;
+    width: 250px;
+    border: var(--color2-palette-1) solid 15px;
+    border-radius: 50%;
+}
+
+#profileDiv1, #profileDiv2 {
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid #550A21; /* adjust color and thickness */
+    height: 350px; /* adjust size */
+    width: 250px; /* adjust size */
+    left: calc(50% - 130px); /* position properly */
+    top: 10px; /* adjust positioning */
+}
+
+#profileDiv2 {
+    top: 0px; /* further adjust for the second div */
+    height: 372px;
+    width: 270px;
+    left: calc(50% - 140px);
+    top: -2px;
+}
+
+#ProfileInformation{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 340px;
+    color: whitesmoke;
+    font-size: 180%;
+    font-family: 'SteamWreck', sans-serif;
+    text-align: justify;
+}
+
+body, html{
+    margin: 0px;
+    padding: 0px;
+}
+
+#CVButton, #LinkButton{
+    position: relative;
+    width : 200px;
+    height: 50px;
+    background: linear-gradient(90deg,
+    #f3f5f6 10%,
+    #bbc3ca 40%,
+    #f3f5f6 45%,
+    #bbc3ca 70%,
+    #f3f5f6 78%,
+    #bbc3ca 100%
+    );
+    margin-top: 100px;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'SteamWreck', sans-serif;
+    font-size: 200%;
+    border-color: var(--color2-palette-3);
+    border-style: solid;
+}
+
+#LinkButton{
+    background-color: #0072b1;
+    background: #0072b1;
+    color: white;
+}
+
+#LinkButton:hover{
+    background-color: #005ea3;
+    background: #005ea3;
+    cursor: pointer;
+    box-shadow: #11101A 10px 10px 10px 5px;
+}
+
+#CVButton:hover{
+    background: linear-gradient(90deg,
+    #bbc3ca 10%,
+    #f3f5f6 40%,
+    #bbc3ca 45%,
+    #f3f5f6 70%,
+    #bbc3ca 78%,
+    #f3f5f6 100%
+    );
+    cursor: pointer;
+    box-shadow: #11101A 10px 10px 10px 5px;
+}
+
+.B{
+    position: absolute;
+    height: auto;
+    width: 20px;
+    transform: rotate(90deg);
+}
+
+#B1{
+    top: 0%;
+    left: 0%;
+}
+
+#B2{
+    top: 0%;
+    left: 90%;
+}
+
+#B3{
+    top: 60%;
+    left: 0%;
+}
+
+#B4{
+    top: 60%;
+    left: 90%;
+}
+
+.centeringDiv{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/*Content 1*/
+#switchContainer{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 20px;
+    gap: 20px;
+    color: var(--color2-palette-2);
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider_round{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color2-palette-6);
+    transition: 0.4s;
+    --webkit-transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider_round:before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color2-palette-3);
+    transition: 0.4s;
+    --webkit-transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider_round{
+    background-color: var(--color2-palette-2);
+}
+
+input:focus + .slider_round{
+    box-shadow: 0 0 1px var(--color2-palette-2);
+}
+
+input:checked + .slider_round:before{
+    transform: translateX(26px);
+    --webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+}
+
+#OpenGLCanvas{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: 5px #29292b solid;
+}
+
+.centeringDivCanvas{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 540px;
+    width: 100vw;
+    margin-top: 0px;
+}
+
+.SmallPadding{
+    width: 100vw;
+    height: 20px;
+}
+
+.MiddlePadding{
+    width: 100vw;
+    height: 50px;
+}
+
+#InteractiveSelectionContainer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px
+}
+
+#InteractiveSelection{
+    height: 430px;
+    width: 425px;
+    display: block;
+    background-image: url('../media/projects1.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    border: 0.5px solid var(--color2-palette-3);
+    transition: transform 0.5s ease, border-radius 0.5s ease, border 0.5s ease;
+}
+
+#projectTitle{
+    width: 100%;
+    text-align: center;
+    font-family: 'SteamWreck', sans-serif;
+    font-size: 500%;
+    opacity: 0%;
+    transition: opacity 0.5s ease;
+}
+
+#InteractiveSelection:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    border-radius: 50px;
+    border: 5px solid var(--color2-palette-3);
+}
+
+#InteractiveSelection:hover #projectTitle{
+    opacity: 100%;
+}
+
+
+#WhichSelectionContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    align-self: flex-start;
+    transform: translateY(-50%);
+}
+
+#WhichSelection{
+    transform: scale(2.0);
+    width: 70px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid var(--color2-palette-3);
+    box-shadow: 0px 0px 10px 5px rgba(20, 10, 7, 0.356);
+    border-radius: 20px 20px 20px 20px;
+}
+
+.WhichSelectionButton{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color2-palette-3);
+}
+
+.WhichSelectionButton:hover{
+    cursor: pointer;
+    background-color: var(--color2-palette-4);
+}
+
+#CenteringLever{
+    position: fixed;
+    top: 75%;
+    left: 75%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--color2-palette-3);
+}
+
+#leverPoint{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    left: -12.5px;
+    top: -12.5px;
+}
+
+#leverPointImage{
+    position: absolute;
+    height: auto;
+    width: 50px;
+    left: -12.5px;
+    top: -12.5px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#leverBar{
+    position: absolute;
+    height: auto;
+    width: 200px;
+    left: -30px;
+    top: -30px;
+    rotate: 3deg;
+    z-index: 0;
+    pointer-events: none;
+    border: solid yellow;
+}
+
+#leverBase{
+    position: absolute;
+    height: auto;
+    width: 110px;
+    left: 10px;
+    top: 20px;
+}
+
+.projectContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal width */
+    background-color: #550A21;
+    width: 100%;
+}
+
+.projectSquare {
+    background-color: #6e470c;
+    border: #11101A solid 1px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%; 
+}
+
+.projectSquare img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.projectSquare img:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.projectSquare::after {
+    content: '';
+    display: block;
+    padding-top: 100%; 
+}
+
+.projectSquare span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+    z-index: 1; 
+    padding: 10px; 
+    box-sizing: border-box;
+    font-family: 'SteamWreck', sans-serif;
+    font-size: 10vh;
+    text-align: center;
+}
+
+.projectSquare:hover span{
+    opacity: 1; 
+}
+
+@media (max-width: 1000px) {
+    .projectContainer {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .projectSquare span{
+        font-size: 8vh;
+    }
+
+    #aliceSquare{
+        font-size: 7vh;
+    }
+}
+
+/*Content 2*/
+
+.MainCenteringDiv{
+    display: flex;
+    width: 100vw;
+    height: 67vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#OpenGLCanvasArt{
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background-color: #0072b1;
+}
+
+.nextButton{
+    position: absolute;
+    width: var(--nextButtonWidth);
+    height: var(--nextButtonHeight);
+    background-color: #0072b1;
+    transition: background-image 0.5s ease;
+
+    bottom: 2%;
+    right: var(--ArrowPosition);
+    background-image: linear-gradient(-60deg,
+        var(--backgroundColor) 0%,
+        var(--backgroundColor) var(--Arrow1),
+        
+        var(--arrowBorderColor) var(--Arrow1),
+        var(--arrowBorderColor)calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 10%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 10%),
+        var(--backgroundColor) calc(var(--Arrow1) + 19%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor)  calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 29%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 29%),
+        var(--backgroundColor) calc(var(--Arrow1) + 38%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 48%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 48%),
+        var(--backgroundColor) calc(var(--Arrow1) + 57%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 67%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 67%),
+        var(--backgroundColor) 100%
+    );
+}
+
+#nb2{
+    left: var(--ArrowPosition);
+    background-image: linear-gradient(60deg,
+        var(--backgroundColor) 0%,
+        var(--backgroundColor) var(--Arrow1),
+        
+        var(--arrowBorderColor) var(--Arrow1),
+        var(--arrowBorderColor)calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 10%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 10%),
+        var(--backgroundColor) calc(var(--Arrow1) + 19%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor)  calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 29%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 29%),
+        var(--backgroundColor) calc(var(--Arrow1) + 38%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 48%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 48%),
+        var(--backgroundColor) calc(var(--Arrow1) + 57%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 67%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 67%),
+        var(--backgroundColor) 100%
+    );
+}
+
+#nb3{
+    bottom: calc(2% + var(--nextButtonHeight));
+    right: var(--ArrowPosition);
+    background-image: linear-gradient(-120deg,
+        var(--backgroundColor) 0%,
+        var(--backgroundColor) var(--Arrow1),
+        
+        var(--arrowBorderColor) var(--Arrow1),
+        var(--arrowBorderColor)calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 10%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 10%),
+        var(--backgroundColor) calc(var(--Arrow1) + 19%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor)  calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 29%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 29%),
+        var(--backgroundColor) calc(var(--Arrow1) + 38%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 48%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 48%),
+        var(--backgroundColor) calc(var(--Arrow1) + 57%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 67%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 67%),
+        var(--backgroundColor) 100%
+    );
+    
+}
+
+#nb4{
+    bottom: calc(2% + var(--nextButtonHeight));
+    left: var(--ArrowPosition);
+    background-image: linear-gradient(120deg,
+        var(--backgroundColor) 0%,
+        var(--backgroundColor) var(--Arrow1),
+        
+        var(--arrowBorderColor) var(--Arrow1),
+        var(--arrowBorderColor)calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 0.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 9.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 10%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 10%),
+        var(--backgroundColor) calc(var(--Arrow1) + 19%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor)  calc(var(--Arrow1) + 19.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 28.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 29%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 29%),
+        var(--backgroundColor) calc(var(--Arrow1) + 38%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 38.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 47.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 48%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 48%),
+        var(--backgroundColor) calc(var(--Arrow1) + 57%),
+
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 57.5%),
+        var(--arrowColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 66.5%),
+        var(--arrowBorderColor) calc(var(--Arrow1) + 67%),
+
+        var(--backgroundColor) calc(var(--Arrow1) + 67%),
+        var(--backgroundColor) 100%
+    );
+}
+
+.lightButton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--lightButtonDimension);
+    height: var(--lightButtonDimension);
+    border-radius: 50%;
+    right: var(--lightButtonPosition);
+    top: 35%;
+    background-color: white;
+    border: 1.5px solid var(--color2-palette-3);
+    transition: background-color 0.8s ease, border 0.8s ease, src 0.8s ease;
+}
+
+.lightButton:hover{
+    cursor: pointer;
+}
+
+#day{
+    background-color: var(--color2-palette-3);
+    border: 1.5px solid white;
+    right: calc(var(--lightButtonPosition) + var(--lightButtonDimension) + 3%);
+}
+
+.lightIcon{
+    height: auto;
+    width: 80%;
+    pointer-events: none;
+}
+
+#moon{
+    width: 50%;
+    transform: translateX(-3.5px);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loader{
+    position: absolute;
+    scale: 0.4;
+    animation: rotate 2s linear infinite; 
+}

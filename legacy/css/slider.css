@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'mexcellent';
+    src: url('../fonts/mexcellent 3d.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+@keyframes arrowMoveLeft{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateX(10px);
+    }
+}
+
+@keyframes arrowClickLeft{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-30px);
+    }
+
+}
+
+@keyframes arrowMoveRight{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes arrowClickRight{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(30px);
+    }
+
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(16, 155, 58);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    font-family: 'mexcellent', sans-serif;
+    font-size: 10vw;
+    text-align: center;
+    -webkit-background-clip: text;
+}
+
+.photoCarroussel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1%;
+}
+
+.photo img, .transparentPhoto img{
+    object-fit: cover;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.photo{
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 1s;
+    transform: scale(0.7);
+}
+
+.photo img{
+    opacity: 1;
+}
+
+.ButtonContainerLeft, .ButtonContainerRight{
+    width: 10%;
+    height: 10%;
+    position: relative;
+    display: inline-block;
+}
+
+.topArrow, .bottomArrow{
+    width: 100%;
+    height:2px;
+    pointer-events: none;
+}
+
+.ButtonContainerLeft button, .ButtonContainerRight button{
+    position: relative;
+    z-index: 2;
+    width: 100px;
+    height: 50px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.topArrow, .bottomArrow {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+}
+
+.topArrow {
+    top: 0;
+    background: linear-gradient(110deg, rgba(0,0,0,0) 34%, rgba(255,159,0,1) 34%, rgba(255,159,0,1) 44%, rgba(16, 155, 58) 44%, rgba(16, 155, 58) 52%, rgba(255,159,0,1) 52%, rgba(255,159,0,1) 62%, rgba(255,159,0,0) 62%);
+}
+
+.bottomArrow {
+    bottom: 0;
+    background: linear-gradient(70deg, rgba(0,0,0,0) 34%, rgba(255,159,0,1) 34%, rgba(255,159,0,1) 44%, rgba(16, 155, 58) 44%, rgba(16, 155, 58) 52%, rgba(255,159,0,1) 52%, rgba(255,159,0,1) 62%, rgba(255,159,0,0) 62%);
+}
+
+.ButtonContainerRight .bottomArrow{
+    background: linear-gradient(-70deg, rgba(0,0,0,0) 38%, rgba(255,159,0,1) 38%, rgba(255,159,0,1) 48%, rgba(16, 155, 58) 48%, rgba(16, 155, 58) 56%, rgba(255,159,0,1) 56%, rgba(255,159,0,1) 66%, rgba(255,159,0,0) 66%);
+
+}   
+
+.ButtonContainerRight .topArrow{
+    background: linear-gradient(-110deg, rgba(0,0,0,0) 38%, rgba(255,159,0,1) 38%, rgba(255,159,0,1) 48%, rgba(16, 155, 58) 48%, rgba(16, 155, 58) 56%, rgba(255,159,0,1) 56%, rgba(255,159,0,1) 66%, rgba(255,159,0,0) 66%);
+}
+
+.ButtonContainerLeft:hover{
+    cursor: pointer;
+}
+
+.ButtonContainerRight:hover{
+    cursor: pointer;
+}
+
+.animateLeftMove{
+    animation: arrowMoveLeft 0.5s infinite alternate;
+}
+
+.animateRightMove{
+    animation: arrowMoveRight 0.5s infinite alternate;
+}
+
+.animateLeftClick{
+    animation: arrowClickLeft 0.5s 2 alternate;
+}
+
+.animateRightClick{
+    animation: arrowClickRight 0.5s 2 alternate;
+}
+
+.videoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    transform: scale(1);
+}
+
+.videoContainer video{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border: 10px solid rgba(255,159,0,1);
+}
+
+#bodyText, #bodyText2{
+    font-family: 'mexcellent', sans-serif;
+    font-size: 4vw;
+    text-align: center;
+    color: #0000aa;
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+#bodyText2{
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.underline{
+    width: 70%;
+    height: 10px;
+    background-color: black;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}

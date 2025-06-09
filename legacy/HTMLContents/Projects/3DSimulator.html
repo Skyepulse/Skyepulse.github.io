@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3D Robot Simulator</title>
+        <link rel="stylesheet" href="../../css/3DSimulator.css"></link>
+        <meta charset="UTF-8">
+        <link href="https://fonts.cdnfonts.com/css/steamwreck" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/do-futuristic" rel="stylesheet">
+    </head>
+    <body>
+        <h1>3D ALPHAI Robot Simulator for AI training</h1>
+        <div class ='BodyText' id = 'mainText'>
+            I was in charge of creating a 3D simulator for Learning Robot's main software AlphAI.
+            The simulator was created using Unity3D and C#, and had to be able to reproduce all activities
+            done by the AlphAI robots. This simulator can be used to train the neural networks of the robots, and to test
+            them with different environments and activities. Activities include: robot racing, intruder detection, path finding, and more.
+        </div>
+        <div class = 'smallPadding'></div>
+        <div class = 'centeringDiv'>
+            <div class = "video-container">
+                <video id = "video1" loop autoplay muted>
+                    <source src = "https://githubpagesvideos.s3.eu-north-1.amazonaws.com/videoRobot1.mp4" type = "video/mp4">
+                    This browser does not support the video tag.
+                </video>
+            </div>
+            <div class = 'smallPadding'></div>
+            <div class = 'verticalContainer'>
+                <div class = 'button-container'>
+                    <button class = 'VideoButton' id = 'VB1' onclick="ChangeVideo(1)">User Experience</button>
+                    <button class = 'VideoButton' id = 'VB2' onclick="ChangeVideo(2)">Learning</button>
+                </div>
+                <div class = 'BodyText' id = "smallText">
+                    The simulator is a fully interactive tool to personnalize the arenas and therefore the reinforcement training. The user can choose the number and size of obstacles, line following patterns, positions and configurations in different arenas. The arenas are a 1-1 representation of Learning Robot's real learning tools.
+                </div>
+            </div>
+        </div>
+    </body>
+<script src="../../javaScript/robot.js"></script>
+</html>
