@@ -1,27 +1,27 @@
 @font-face {
     font-family: 'VGAR';
-    src: url('../fonts/VGAR/V-GERBbold.ttf') format('truetype');
+    src: url('fonts/VGAR/V-GERBbold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal; 
 }
 
 @font-face {
     font-family: 'VGAR';
-    src: url('../fonts/VGAR/V-GERBlight.ttf') format('truetype');
+    src: url('fonts/VGAR/V-GERBlight.ttf') format('truetype');
     font-weight: lighter;
     font-style: normal; 
 }
 
 @font-face {
     font-family: 'Voyager';
-    src: url('../fonts/VGAR/Voyager Grotesque.ttf') format('truetype');
+    src: url('fonts/VGAR/Voyager Grotesque.ttf') format('truetype');
     font-weight: bold;
     font-style: normal; 
 }
 
 @font-face {
     font-family: 'FuturaBold';
-    src: url('../fonts/FuturaStdBold.otf') format('opentype');
+    src: url('fonts/FuturaStdBold.otf') format('opentype');
     font-weight: bold;
     font-style: normal; 
 }
