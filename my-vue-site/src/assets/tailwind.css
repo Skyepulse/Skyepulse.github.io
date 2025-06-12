@@ -23,7 +23,7 @@ body {
 
 #app {
     margin: 0;
-    padding: 0.2rem;
+    padding: 0;
     display: flex;
     width: 100vw;
     height: 100vh;

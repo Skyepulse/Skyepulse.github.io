@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Starship';
-    src: url('../fonts/StarshipGrunge.otf') format('opentype'),
-         url('../fonts/StarshipGrunge.ttf') format('truetype');
+    src: url('fonts/StarshipGrunge.otf') format('opentype'),
+         url('fonts/StarshipGrunge.ttf') format('truetype');
     font-weight: normal;
     font-style: normal; 
 }
@@ -632,7 +632,7 @@ input:checked + .slider_round:before{
     height: 430px;
     width: 425px;
     display: block;
-    background-image: url('../media/projects1.png');
+    background-image: url('media/projects1.png');
     background-size: cover;
     background-position: center;
     border-radius: 3px;
