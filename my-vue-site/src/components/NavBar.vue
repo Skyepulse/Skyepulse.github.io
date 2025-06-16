@@ -1,13 +1,14 @@
 <template>
-    <div id="nav-bar" ref="navbarRef" class="fixed top-0 left-0 w-full bg-neutral-200 z-50 transition-all duration-300" :class="{'h-[10vh]': !dropDownOpen, 'h-[25vh]': dropDownOpen}">
+    <div id="nav-bar" ref="navbarRef" class="fixed top-0 left-0 w-full bg-neutral-200 z-50 transition-all duration-300 border-b-2 border-black" :class="{'h-[10vh]': !dropDownOpen, 'h-[25vh]': dropDownOpen}">
         <div class="flex items-center justify-between h-[10vh] pl-4" :class="{'pr-20': !isMobile, 'pr-4': isMobile}">
-            <div class="text-2xl font-bold text-gray-800">
+            <router-link to="/" class="text-2xl font-bold text-gray-800 pl-5">
                 Maël Rios
-            </div>
+            </router-link>
             <nav v-if="!isMobile" class="flex space-x-4">
-                <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
-                <a href="/about" class="text-gray-600 hover:text-gray-800">About</a>
-                <a href="/contact" class="text-gray-600 hover:text-gray-800">Contact</a>
+                <router-link to="/about" class="text-gray-600 hover:text-gray-800">About</router-link>
+                <router-link to="/projects" class="text-gray-600 hover:text-gray-800">Projects</router-link>
+                <router-link to="/contact" class="text-gray-600 hover:text-gray-800">Contact</router-link>
+                <a href="/legacy/index.html" class="text-purple-800 hover:text-gray-800 font-bold" v-tooltip="'Visit my old website!'">Legacy Website</a>
             </nav>
             <div v-else class="cursor-pointer" @click="clickDropDown">
               <img src="@src/assets/drop-down.svg" class="w-6 h-6" alt="Dropdown" />
@@ -16,18 +17,20 @@
         <transition name="fade-slide">
           <nav
             v-if="isMobile && dropDownOpen"
-            class="flex h-[15vh] flex-col items-start px-4 pt-4 space-y-2"
+            class="flex h-[15vh] flex-col items-start px-4 pt-4 space-y-2 overflow-hidden"
           >
-            <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
-            <a href="/about" class="text-gray-600 hover:text-gray-800">About</a>
-            <a href="/contact" class="text-gray-600 hover:text-gray-800">Contact</a>
+            <router-link to="/about" class="text-gray-600 hover:text-gray-800">About</router-link>
+            <router-link to="/projects" class="text-gray-600 hover:text-gray-800">Projects</router-link>
+            <router-link to="/contact" class="text-gray-600 hover:text-gray-800">Contact</router-link>
+            <a href="/legacy/index.html" class="text-purple-800 hover:text-gray-800 font-bold">Legacy Website</a>
           </nav>
         </transition>
     </div>
 </template>
 
 <script setup lang="ts">
-  import { defineProps, ref, watch, onMounted, onUnmounted } from 'vue';
+  import router from '@src/router';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 
   //================================//
   const props = defineProps({

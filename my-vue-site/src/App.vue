@@ -1,11 +1,22 @@
 <template>
   <NavBar :isMobile="isMobile"/>
+  <section id="home">
+    <Home :isMobile="isMobile"/>
+  </section>
+  <section id="about">
 
-  <!--a href="/legacy/index.html">View Legacy Site</a-->
+  </section>
+  <section id="projects">
+    <Projects :isMobile="isMobile"/>
+  </section>
+  <section id="contact">
+  </section>
 </template>
 
 <script setup lang="ts">
   import NavBar from '@src/components/NavBar.vue';
+  import Home from '@src/components/Home.vue';
+  import Projects from '@src/components/Projects.vue';
 
   import { ref, onMounted, onUnmounted } from 'vue';
 
@@ -21,5 +32,10 @@
   onMounted(() => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
+  });
+
+  //================================//
+  onUnmounted(() => {
+    window.removeEventListener('resize', checkMobile);
   });
 </script>
