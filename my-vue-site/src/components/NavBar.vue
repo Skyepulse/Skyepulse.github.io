@@ -5,7 +5,7 @@
                 Maël Rios
             </router-link>
             <nav v-if="!isMobile" class="flex space-x-4">
-                <router-link to="/about" class="text-gray-600 hover:text-gray-800">About</router-link>
+                <router-link to="/experience" class="text-gray-600 hover:text-gray-800">Experience</router-link>
                 <router-link to="/projects" class="text-gray-600 hover:text-gray-800">Projects</router-link>
                 <router-link to="/contact" class="text-gray-600 hover:text-gray-800">Contact</router-link>
                 <a href="/legacy/index.html" class="text-purple-800 hover:text-gray-800 font-bold" v-tooltip="'Visit my old website!'">Legacy Website</a>
@@ -17,9 +17,9 @@
         <transition name="fade-slide">
           <nav
             v-if="isMobile && dropDownOpen"
-            class="flex h-[15vh] flex-col items-start px-4 pt-4 space-y-2 overflow-hidden"
+            class="flex h-[15vh] flex-col items-start px-4 pt-0 space-y-2 overflow-hidden"
           >
-            <router-link to="/about" class="text-gray-600 hover:text-gray-800">About</router-link>
+            <router-link to="/experience" class="text-gray-600 hover:text-gray-800">Experience</router-link>
             <router-link to="/projects" class="text-gray-600 hover:text-gray-800">Projects</router-link>
             <router-link to="/contact" class="text-gray-600 hover:text-gray-800">Contact</router-link>
             <a href="/legacy/index.html" class="text-purple-800 hover:text-gray-800 font-bold">Legacy Website</a>
@@ -29,8 +29,7 @@
 </template>
 
 <script setup lang="ts">
-  import router from '@src/router';
-import { ref, watch, onMounted, onUnmounted } from 'vue';
+  import { ref, watch, onMounted, onUnmounted } from 'vue';
 
   //================================//
   const props = defineProps({

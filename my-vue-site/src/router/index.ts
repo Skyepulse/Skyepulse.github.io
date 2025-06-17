@@ -12,7 +12,7 @@ const routes: RouteRecordRaw[] = [
         component: App,
     },
     {
-        path: '/about',
+        path: '/experience',
         component: App,
     },
     {
@@ -26,8 +26,8 @@ const scrollBehavior: RouterScrollBehavior = (to, _from, _savedPosition) => {
         return scrollToId('projects')
     } else if (to.path === '/') {
         return scrollToId('home')
-    } else if (to.path === '/about') {
-        return scrollToId('about')
+    } else if (to.path === '/experience') {
+        return scrollToId('experience')
     }
     else if (to.path === '/contact') {
         return scrollToId('contact')

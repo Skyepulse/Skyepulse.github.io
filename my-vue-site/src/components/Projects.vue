@@ -1,5 +1,5 @@
 <template>
-    <div id="ProjectsWrapper" class="w-full flex flex-column justify-center items-center bg-neutral-200">
+    <div id="ProjectsWrapper" class="w-full flex flex-column justify-center items-center bg-neutral-50">
 
         <!--If loading info-->
         <span v-if="isLoading" class="text-center text-2xl text-gray-800">Loading...</span>
@@ -57,7 +57,7 @@
 <script setup lang="ts">
     import { ref, watchEffect, watch, computed } from 'vue';
     import { useInfo } from '@src/helpers/info';
-    import type Project from '@src/helpers/info';
+    import type { Project } from '@src/helpers/info';
     import ProjectEl from '@src/components/Elements/ProjectEl.vue';
 
     const { info, isLoading, error } = useInfo();

@@ -3,8 +3,8 @@
   <section id="home">
     <Home :isMobile="isMobile"/>
   </section>
-  <section id="about">
-
+  <section id="experience">
+    <Experience :isMobile="isMobile"/>
   </section>
   <section id="projects">
     <Projects :isMobile="isMobile"/>
@@ -17,6 +17,7 @@
   import NavBar from '@src/components/NavBar.vue';
   import Home from '@src/components/Home.vue';
   import Projects from '@src/components/Projects.vue';
+  import Experience from '@src/components/Experience.vue';
 
   import { ref, onMounted, onUnmounted } from 'vue';
 

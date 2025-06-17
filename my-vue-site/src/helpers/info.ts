@@ -3,19 +3,36 @@ import { ref, watchEffect} from 'vue';
 import { useFetch } from '@vueuse/core';
 
 //================================//
-export default interface Project {
+export interface Project {
     title: string;
     description: string;
     image: string;
     link: string;
     types: string[];
     year: number;
-}
+};
+
+export interface Experience {
+    startYear: number;
+    endYear: number;
+    duration: string;
+    title: string;
+    where: string;
+    logo: string;
+    description: string[];
+    link: string;
+    types: string [];
+};
 
 interface Info {
     Home: {
         title: string;
         description: string;
+    },
+    Experience: {
+        title: string;
+        Professional: Experience[];
+        Academics: Experience[];
     },
     Projects: {
         title: string;

@@ -2,7 +2,7 @@
     <div id="Project" class="flex flex-row items-start justify-center w-full mt-1 mb-4">
         
         <!-- Year and types -->
-        <div class="flex flex-col items-end justify-start w-[30%] ">
+        <div class="flex flex-col items-end justify-start w-[30%]">
             <h3 class="text-3xl font-bold text-gray-800 mb-2 mr-2 border-5 rounded-full pl-2 pr-2 text-center">{{ year }}</h3>
             <div id="type-wrapper" class="flex flex-wrap flex-row items-center justify-end w-full">
                 <!-- One box per type rendered -->
