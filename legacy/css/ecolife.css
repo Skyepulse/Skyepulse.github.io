@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Starship';
-    src: url('../fonts/StarshipGrunge.otf') format('opentype'),
-         url('../fonts/StarshipGrunge.ttf') format('truetype');
+    src: url('fonts/StarshipGrunge.otf') format('opentype'),
+         url('fonts/StarshipGrunge.ttf') format('truetype');
     font-weight: normal;
     font-style: normal; 
 }

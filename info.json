@@ -1,0 +1,171 @@
+{
+    "Home":
+    {
+        "title": "Maël Rios - Graphics and VR Developer",
+        "description": "I am a software engineer specialized in graphics, VR and interactive applications. I love creating meaningful and fun experiences, weaving powerful modern technologies with research and innovation. I am currently working at Barco as an R&D VR developer."
+    },
+    "Experience":
+    {
+        "title": "Professional Experience and Academics",
+        "Professional":
+        [
+            {
+                "startYear": 2025,
+                "endYear": 2025,
+                "duration": "5 months",
+                "title": "XR/3D R&D SOFTWARE ENGINEER INTERN",
+                "where": "BARCO, Kortrijk",
+                "logo": "experiencePictures/Barco.png",
+                "description": ["Responsible of implementing low-level seemless user interactions for a stereoscopic XR/3D visualization pipeline.", "R&D project proof of concept, optimization and testing."],
+                "link": "https://www.barco.com/en",
+                "types": ["C++", "C", "C#", "OpenXR API", "Vulkan", "Unity", "Unreal Engine"]
+            },
+            {
+                "startYear": 2024,
+                "endYear": 2025,
+                "duration": "6 months",
+                "title": "XR PROGRAMMING ASSISTANT / XR GAME DEVELOPER",
+                "where": "Ubisoft New Business",
+                "logo": "experiencePictures/Ubisoft.png",
+                "description": ["Responsible for Unity VR and MR Interactive Prototypes and Proof of Concept.", "Integrating Quest 3, Pico 3 and Apple Vision pro XR location-based solutions.", "Production Network and Gameplay programmer in unannounced VR game."],
+                "link": "https://www.ubisoft.com/fr-fr/company/about-us",
+                "types": ["Game Developer", "Network", "XR", "VR", "Unity 3D", "C#", "Python"]
+            },
+            {
+                "startYear": 2023,
+                "endYear": 2023,
+                "duration": "3 months",
+                "title": "3D UNITY DEVELOPER INTERN",
+                "where": "Learning Robots",
+                "logo": "experiencePictures/LearningRobots.png",
+                "description": ["Developed a 3D simulator with Unity for AI-powered Learning Robots equipment.", "Responsible for neural network socket communication and physics engine regulations.", "Implemented simulated ultrasonic and color sensors, fisheye camera rendering and servomotors."],
+                "link": "https://www.learningrobots.ai/",
+                "types": ["Unity 3D", "AI", "Python", "C#", "Websocket", "Robotics"]
+            },
+            {
+                "startYear":2022,
+                "endYear": 2022,
+                "duration": "4 months",
+                "title": "MACHINE LEARNING RESEARCH INTERN",
+                "where": "Dauphine, MILES",
+                "logo": "experiencePictures/Dauphine.png",
+                "description": ["Study of robust defense guarantee against adversarial attacks in neural networks through randomized smoothing.", "Implemented neural networks with Pytorch and reviewed state of the art papers."],
+                "link": "https://www.lamsade.dauphine.fr/fr/recherche/projets-scientifiques/miles-systemes-dintelligence-et-dapprentissage-automatique.html",
+                "types": ["Research", "AI", "Python"]
+            }
+        ],
+        "Academics":
+        [
+            {
+                "startYear": 2022,
+                "endYear": 2026,
+                "duration": "4 years",
+                "title": "MSC IN ENGINEERING Computer Sciences 3.9/4 GPA",
+                "where": "TÉLÉCOM PARIS - INSTITUTE POLYTECHNIQUE OF PARIS",
+                "logo": "experiencePictures/Telecom.png",
+                "description": ["Interaction, Graphic and Design. 3D and interactive systems. User-Centered design (UI/UX). Web development.", "Machine Learning, AI, Deep Learning, NLP and Statistics courses for data pipelines and analytics."],
+                "link": "https://www.telecom-paris.fr/en",
+                "types": ["AI", "Machine Learning", "Python", "C++", "JavaScript", "Web", "OpenGL", "Simulation", "Graphics", "NLP"]
+            },
+            {
+                "startYear": 2019,
+                "endYear": 2022,
+                "duration": "3 years",
+                "title": "Computer Science bachelor's degree ( 15,6/20 )",
+                "where": "PARIS SCIENCES ET LETTRES - CPES SCIENCES",
+                "logo": "experiencePictures/PSL.jpg",
+                "description": ["Machine Learning, symbolic AI, Statistics, RDF, prolog/problog.", "Math/Physics: topology, linear algebra, electromagnetics, thermodynamics, logic.", "ENS Ulm, Institute of Mines, Paris Dauphine, Lycée Henri IV."],
+                "link": "https://psl.eu/formation/cpes-psl-henri-IV",
+                "types": ["AI", "Machine Learning", "Python", "C++", "Java", "Prolog", "Math", "Statistics", "Physics"]
+            }
+        ]
+    },
+    "Projects":
+    {
+        "title": "Discover My Projects",
+        "types":["All", "Graphics", "Simulation", "Web", "Games", "AI", "GameJam"],
+        "projects":
+        [
+            {
+                "title": "CNN VISUALIZER",
+                "description": "An interactive and connected web application to visualize the inner workings of Convolutional Neural Networks.",
+                "image": "ProjectPictures/CNN.png",
+                "link": "https://www.008032025.xyz",
+                "types": ["All", "Web", "AI", "Graphics"],
+                "year": 2025
+            },
+            {
+                "title": "GLASS OVERFLOW",
+                "description": "A real-time Optimized SPH water simulation game with custom physics and rendering engines, coded in C++ and OpenGL, based on dynamic fluid research papers.",
+                "image": "ProjectPictures/GO4.png",
+                "link": "/legacy/HTMLContents/Projects/GlassOverflow.html",
+                "types": ["All", "Simulation", "Graphics", "Games"],
+                "year": 2024
+            },
+            {
+                "title": "TWITCH AUTOCLICKER",
+                "description": "A web autoclicker game for Twitch, with it's chat bot, connected to a Twitch chat that can earn points and collaborate to unlock new minigames and power ups! ",
+                "image": "ProjectPictures/twitchAutoclicker.png",
+                "link": "https://github.com/Skyepulse/twitch-app",
+                "types": ["All", "Web", "Games"],
+                "year": 2025
+            },
+            {
+                "title": "3D AI ROBOT SIMULATOR",
+                "description": "I was in charge of developing a brand new 3D simulator in Unity for AlphAI, Learning Robot's AI learning robot solution.",
+                "image": "ProjectPictures/AlphAI.png",
+                "link": "/legacy/HTMLContents/Projects/3DSimulator.html",
+                "types": ["All", "Simulation", "AI"],
+                "year": 2023
+            },
+            {
+                "title": "ECOLIFE",
+                "description": "A 3D Unity game where you play as a fox, exploring a world transforming by human hands in real-time.",
+                "image": "ProjectPictures/Ecolife.png",
+                "link": "/legacy/HTMLContents/Projects/ecolife.html",
+                "types": ["All", "Simulation", "Games"],
+                "year": 2023
+            },
+            {
+                "title": "SLUG SPROOCH",
+                "description": "Ludum Dare 56 entry. Slug Sprooch 2D game where you launch slugs to the other side of the road, and hope they don't get squashed by the cars!",
+                "image": "ProjectPictures/SlugSprooch.png",
+                "link": "https://matelou.itch.io/slug-sprooch",
+                "types": ["All", "Games", "GameJam", "Web"],
+                "year": 2024
+            },
+            {
+                "title": "THOUGHT PATROL",
+                "description": "Global Game Jam 2025 entry. Thought Patrol is a Unity 3D game where you play as a Thought officer, charged of censoring public speech following the orders of the King. Will you be able to handle the never ending rule changes?",
+                "image": "ProjectPictures/ThoughtPatrol.jpg",
+                "link": "https://matelou.itch.io/thought-patrol",
+                "types": ["All", "Games", "GameJam", "Web"],
+                "year": 2025
+            },
+            {
+                "title": "KISS MARRY KILL",
+                "description": "Ludum Dare 55 entry. KMK is a fun dating simulator where you try to manage and get a date with one of hell' inhabitants, while trying to avoid getting summoned by petty humans. Choose how to resolve the weird requests, at the risk of angering a possible date!",
+                "image": "ProjectPictures/KMK.png",
+                "link": "https://matelou.itch.io/kiss-marry-kill",
+                "types": ["All", "Games", "GameJam", "Web"],
+                "year": 2024
+            },
+            {
+                "title": "OPENGL PROJECTS",
+                "description": "A collection of small OpenGL projects, including shadowmapping, rigidbody physics, SPH simulation, 3D model subdivision algorithm, etc...",
+                "image": "ProjectPictures/OpenGL.png",
+                "link": "/legacy/HTMLContents/Projects/OpenGL.html",
+                "types": ["All", "Graphics", "Simulation"],
+                "year": 2023
+            },
+            {
+                "title": "ROOMS XYZ STEAMROOM",
+                "description": "Rooms XYZ is a very fun 3D pixel ortographic web game engine! I had fun creating this room in it, which is a minimal steam room to test the engine's coding and API capabilities.",
+                "image": "ProjectPictures/steamRoom.png",
+                "link": "https://rooms.xyz/elmrysmordred/steamroom",
+                "types": ["All", "Web", "Graphics", "Games"],
+                "year": 2023
+            }
+        ]
+    }
+}
