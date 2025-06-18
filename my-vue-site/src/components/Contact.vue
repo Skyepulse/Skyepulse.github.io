@@ -75,7 +75,7 @@
         feedback.value = '';
 
         try {
-            const res = await fetch('/api/contact', {
+            const res = await fetch('https://www.008032025.xyz/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form.value),
