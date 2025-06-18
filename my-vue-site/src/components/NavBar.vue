@@ -1,5 +1,5 @@
 <template>
-    <div id="nav-bar" ref="navbarRef" class="fixed top-0 left-0 w-full bg-neutral-200 z-50 transition-all duration-300 border-b-2 border-black" :class="{'h-[10vh]': !dropDownOpen, 'h-[25vh]': dropDownOpen}">
+    <div id="nav-bar" ref="navbarRef" class="fixed top-0 left-0 w-full bg-neutral-200 z-50 transition-all duration-300 border-b-1 border-gray-400" :class="{'h-[10vh]': !dropDownOpen, 'h-[25vh]': dropDownOpen}">
         <div class="flex items-center justify-between h-[10vh] pl-4" :class="{'pr-20': !isMobile, 'pr-4': isMobile}">
             <router-link to="/" class="text-2xl font-bold text-gray-800 pl-5">
                 Maël Rios

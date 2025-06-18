@@ -1,5 +1,5 @@
 <template>
-    <div id="Experience" class="flex items-start justify-center w-[80%] mt-1 mb-1"  :class="{'flex-row': !inverted, 'flex-row-reverse': inverted}">
+    <div id="Experience" class="flex items-start justify-center mt-1 mb-1"  :class="{'flex-row': !inverted, 'flex-row-reverse': inverted, 'w-[80%]': !isMobile, 'w-full': isMobile, 'pr-5': isMobile && !inverted}">
         <!-- Logo and year -->
         <div class="flex flex-col w-[30%] h-full justify-center items-center">
             <a :href="link" target="_blank">
@@ -9,8 +9,7 @@
             
             <!-- Small triangle upwards -->
             <div v-if="index === 0" class="w-0 h-0 p-0 m-0 border-l-[10px] border-r-[10px] border-b-[10px] border-l-transparent border-r-transparent border-b-black"></div>
-            <div class="w-1 h-full border-1 bg-black">
-            </div>
+            <div class="w-1 h-full border-0" :class="{'bg-gradient-to-b from-black to-transparent': last, 'bg-black': !last}"></div>
         </div>
 
         <!-- content -->
@@ -89,7 +88,10 @@
             type: Array as () => string[],
             default: () => []
         },
-
+        last: {
+            type: Boolean,
+            default: false
+        }
     });
 
     //================================//

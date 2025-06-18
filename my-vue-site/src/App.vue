@@ -9,8 +9,7 @@
   <section id="projects">
     <Projects :isMobile="isMobile"/>
   </section>
-  <section id="contact">
-  </section>
+  <Footer :isMobile="isMobile"/>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +17,7 @@
   import Home from '@src/components/Home.vue';
   import Projects from '@src/components/Projects.vue';
   import Experience from '@src/components/Experience.vue';
+  import Footer from './components/Footer.vue';
 
   import { ref, onMounted, onUnmounted } from 'vue';
 

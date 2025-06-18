@@ -44,7 +44,7 @@
 
             <!-- Show More Button -->
             <button 
-                class="mt-4 mb-2 px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg shadow-md"
+                class="mt-4 mb-6 px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg shadow-md"
                 :class="{'hover:bg-gray-400 cursor-pointer':!isMobile}"
                 @click="toggleShowMore"
             >

@@ -24,6 +24,9 @@
                     <a href="https://www.linkedin.com/in/ma%C3%ABl-rios-011564262/" v-tooltip="'LinkedIn'">
                         <img :src="lkBlack" class="w-16 h-16 mx-2" alt="LinkedIn Icon" />
                     </a>
+                    <a href="https://githubpagesvideos.s3.eu-north-1.amazonaws.com/cv.pdf" v-tooltip="'Resume'">
+                        <img :src="resumeBlack" class="w-18 h-18 mx-2" alt="Resume Icon" />
+                    </a>
                 </div>
             </div>
 
@@ -41,6 +44,9 @@
                     <a href="https://www.linkedin.com/in/ma%C3%ABl-rios-011564262/">
                         <img :src="lkBlack" class="w-16 h-16 mx-2" alt="LinkedIn Icon" />
                     </a>
+                    <a href="https://githubpagesvideos.s3.eu-north-1.amazonaws.com/cv.pdf">
+                        <img :src="resumeBlack" class="w-18 h-18 mx-2" alt="Resume Icon" />
+                    </a>
                 </div>
             </div>
         </div>
@@ -54,9 +60,10 @@
     import { useInfo } from '@src/helpers/info';
     import profileImage from '@src/assets/pfp.jpg';
     import ghBlack from '@src/assets/icons/Github_black.png';
-    import ghWhite from '@src/assets/icons/Github_white.png';
+    //import ghWhite from '@src/assets/icons/Github_white.png';
     import lkBlack from '@src/assets/icons/LinkedIN_black.png';
-    import lkWhite from '@src/assets/icons/LinkedIN_white.png';
+    //import lkWhite from '@src/assets/icons/LinkedIN_white.png';
+    import resumeBlack from '@src/assets/icons/resume.png';
 
     const { info, isLoading, error } = useInfo();
     const homeTitle = computed(() => info.value?.Home.title ?? 'Default Title');

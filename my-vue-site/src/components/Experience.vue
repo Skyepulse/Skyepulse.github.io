@@ -7,9 +7,9 @@
         <!--If error loading info-->
         <span v-else-if="error" class="text-center text-2xl text-red-600">Error loading info: {{ error.message }}</span>
 
-        <div v-else class="flex w-full" :class="{'flex-row justify-start items-start': !isMobile, 'flex-column justify-center items-start': isMobile}">
+        <div v-else class="flex w-full" :class="{'flex-row justify-start items-start': !isMobile, 'flex-col justify-center items-start': isMobile}">
             <div id="Professional" class="flex flex-col justify-center items-center mt-4 mb-4" :class="{'w-[50%]':!isMobile, 'w-full':isMobile}">
-                <h1 class="text-4xl font-bold text-gray-800 mb-4 border-b-2 pb-3">Professional Experience</h1>
+                <h1 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 pb-3">Professional Experience</h1>
                 <div v-for="(experience, index) in ProfessionalExperience" :key="index" class ="w-full flex justify-end">
                     <ExperienceEl
                         :index="index" 
@@ -24,11 +24,12 @@
                         :description="experience.description"
                         :link="experience.link"
                         :types="experience.types"
+                        :last="index === ProfessionalExperience.length - 1"
                     />
                 </div>
             </div>
             <div id="Academics" class="flex flex-col justify-center items-center mt-4 mb-4" :class="{'w-[50%]':!isMobile, 'w-full':isMobile}">
-                <h1 class="text-4xl font-bold text-gray-800 mb-4 border-b-2 pb-3">Academic Experience</h1>
+                <h1 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 pb-3">Academic Experience</h1>
                 <div v-for="(experience, index) in AcademicExperience" :key="index" class="w-full flex justify-start">
                     <ExperienceEl
                         :index="index" 
@@ -43,6 +44,7 @@
                         :description="experience.description"
                         :link="experience.link"
                         :types="experience.types"
+                        :last="index === AcademicExperience.length - 1"
                     />
                 </div>
             </div>
