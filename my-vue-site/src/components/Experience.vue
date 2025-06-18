@@ -1,13 +1,6 @@
 <template>
-    <div id="ExperienceWrapper" class="w-full flex flex-column items-center bg-neutral-200">
-
-        <!--If loading info-->
-        <span v-if="isLoading" class="text-center text-2xl text-gray-800">Loading...</span>
-
-        <!--If error loading info-->
-        <span v-else-if="error" class="text-center text-2xl text-red-600">Error loading info: {{ error.message }}</span>
-
-        <div v-else class="flex w-full" :class="{'flex-row justify-start items-start': !isMobile, 'flex-col justify-center items-start': isMobile}">
+    <div id="ExperienceWrapper" class="w-full flex flex-column items-center bg-neutral-50">
+        <div class="flex w-full" :class="{'flex-row justify-start items-start': !isMobile, 'flex-col justify-center items-start': isMobile}">
             <div id="Professional" class="flex flex-col justify-center items-center mt-4 mb-4" :class="{'w-[50%]':!isMobile, 'w-full':isMobile}">
                 <h1 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 pb-3">Professional Experience</h1>
                 <div v-for="(experience, index) in ProfessionalExperience" :key="index" class ="w-full flex justify-end">
@@ -58,7 +51,7 @@
     import type { Experience } from '@src/helpers/info';
     import ExperienceEl from '@src/components/Elements/ExperienceEl.vue';
 
-    const { info, isLoading, error } = useInfo();
+    const { info } = useInfo();
 
     const AcademicExperience = ref<Experience[]>([]);
     const ProfessionalExperience = ref<Experience[]>([]);

@@ -1,14 +1,6 @@
 <template>
-    <div id="HomeWrapper" class="w-full pt-[10vh] flex flex-row justify-center items-center bg-neutral-50" :class="{'h-[90vh]': !isMobile, '': isMobile}">
-
-        <!--If loading info-->
-        <span v-if="isLoading" class="text-center text-2xl text-gray-800">Loading...</span>
-
-        <!--If error loading info-->
-        <span v-else-if="error" class="text-center text-2xl text-red-600">Error loading info: {{ error.message }}</span>
-
-        <!--If info loaded-->
-        <div v-else class="flex w-full h-full" :class="{'flex-col items-center justify-start': isMobile, 'flex-row items-center justify-center': !isMobile}">
+    <div id="HomeWrapper" class="w-full pt-[10vh] flex flex-row justify-center items-center bg-white" :class="{'h-[90vh]': !isMobile, '': isMobile}">
+        <div class="flex w-full h-full" :class="{'flex-col items-center justify-start': isMobile, 'flex-row items-center justify-center': !isMobile}">
 
             <!-- Not Mobile-->
             <div v-if="!isMobile" id="image-wrapper" class="flex flex-col items-center justify-center h-full w-[35%]">
@@ -65,7 +57,7 @@
     //import lkWhite from '@src/assets/icons/LinkedIN_white.png';
     import resumeBlack from '@src/assets/icons/resume.png';
 
-    const { info, isLoading, error } = useInfo();
+    const { info } = useInfo();
     const homeTitle = computed(() => info.value?.Home.title ?? 'Default Title');
     const homeDescription = computed(() => info.value?.Home.description ?? 'Default Description');
 

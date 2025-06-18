@@ -1,14 +1,6 @@
 <template>
-    <div id="ProjectsWrapper" class="w-full flex flex-column justify-center items-center bg-neutral-50">
-
-        <!--If loading info-->
-        <span v-if="isLoading" class="text-center text-2xl text-gray-800">Loading...</span>
-
-        <!--If error loading info-->
-        <span v-else-if="error" class="text-center text-2xl text-red-600">Error loading info: {{ error.message }}</span>
-
-        <!--If info loaded-->
-        <div v-else class="flex flex-col items-center justify-center w-full h-full">
+    <div id="ProjectsWrapper" class="w-full flex flex-column justify-center items-center bg-white">
+        <div class="flex flex-col items-center justify-center w-full h-full">
 
             <!-- Project Title -->
             <h1 class=" text-5xl text-center font-bold text-gray-800 ml-2 mr-2 mb-4 pb-4 mt-4 border-b-2">{{ ProjectTitle }}</h1>
@@ -60,7 +52,7 @@
     import type { Project } from '@src/helpers/info';
     import ProjectEl from '@src/components/Elements/ProjectEl.vue';
 
-    const { info, isLoading, error } = useInfo();
+    const { info } = useInfo();
 
     const projects = ref<Project[]>([]);
     const types = ref<string[]>([]);

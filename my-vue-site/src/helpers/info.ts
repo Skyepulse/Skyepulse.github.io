@@ -1,6 +1,6 @@
 // info.ts loads info.json and provides a global object with the static data.
-import { ref, watchEffect} from 'vue';
-import { useFetch } from '@vueuse/core';
+import { ref } from 'vue';
+import infoJson from '@src/assets/info.json';
 
 //================================//
 export interface Project {
@@ -42,28 +42,11 @@ interface Info {
 }
 
 //================================//
-const info = ref<Info | null>(null);
-const isLoading = ref(true);
-const { data, error } = useFetch('info.json').json().get();
-
-
-//================================//
-watchEffect(() => {
-    if (error.value) {
-        console.error('Error loading info.json:', error.value);
-        isLoading.value = false;
-    } else if (data.value) {
-        info.value = data.value;
-        isLoading.value = false;
-        console.log('info.json loaded successfully:', info.value);
-    }
-});
+const info = ref<Info | null>(infoJson as Info);
 
 //================================//
 export function useInfo() {
     return {
-        info,
-        isLoading,
-        error
+        info
     };
 }
