@@ -1,0 +1,4 @@
+[submodule "my-vue-site/external/webGPU-Basics-Collections"]
+	path = my-vue-site/external/webGPU-Basics-Collections
+	url = https://github.com/Skyepulse/WebGPU-Basics-Collections
+	branch = main
