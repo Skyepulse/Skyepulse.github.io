@@ -87,6 +87,14 @@
         "projects":
         [
             {
+                "title": "WEBGPU BASICS COLLECTIONS",
+                "description": "A collection of small WebGPU basic demos and experiments, showcasing the capabilities of the new WebGPU API. Perfect to start learning it.",
+                "image": "ProjectPictures/WebGPUBasics.png",
+                "link": "/projects/webGPU-Basics-Collections",
+                "types": ["All", "Web", "Graphics"],
+                "year": 2025
+            },
+            {
                 "title": "CNN VISUALIZER",
                 "description": "An interactive and connected web application to visualize the inner workings of Convolutional Neural Networks.",
                 "image": "ProjectPictures/CNN.png",
