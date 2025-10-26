@@ -2,3 +2,6 @@
 	path = my-vue-site/external/webGPU-Basics-Collections
 	url = https://github.com/Skyepulse/WebGPU-Basics-Collections
 	branch = main
+[submodule "my-vue-site/external/web-avbd2d"]
+	path = my-vue-site/external/web-avbd2d
+	url = https://github.com/Skyepulse/web-avbd2d.git
