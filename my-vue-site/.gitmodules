@@ -1,0 +1,6 @@
+[submodule "external/Skyegrid"]
+    path = external/Skyegrid
+    url = https://github.com/Skyepulse/Skyegrid.git
+    branch = web-specific
+[submodule "external/your-repo"]
+	branch = web-specific

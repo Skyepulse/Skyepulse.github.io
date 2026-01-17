@@ -5,3 +5,6 @@
 [submodule "my-vue-site/external/web-avbd2d"]
 	path = my-vue-site/external/web-avbd2d
 	url = https://github.com/Skyepulse/web-avbd2d.git
+[submodule "my-vue-site/external/Skyegrid"]
+	path = my-vue-site/external/Skyegrid
+	url = https://github.com/Skyepulse/Skyegrid.git
