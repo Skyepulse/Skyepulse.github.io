@@ -88,7 +88,7 @@
         [   
             {
                 "title": "Skyegrid Voxel Engine",
-                "description": "A from scratch WGPU (both native and web) pure compute shader voxel engine in c++, with optimized disk streaming, LOD management and real time editing.",
+                "description": "A from scratch WebGPU (both native and web) pure compute shader voxel engine in c++, with optimized disk streaming, LOD management and real time editing.",
                 "image": "ProjectPictures/Skyegrid.png",
                 "link": "/projects/skyegrid",
                 "types": ["All", "Web", "Graphics", "Research"],
