@@ -118,6 +118,36 @@
         .controls-help:hover {
             opacity: 1;
         }
+
+        /* Resize Warning Overlay */
+        .resize-warning {
+            position: fixed;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            z-index: 100;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .resize-warning.visible {
+            display: flex;
+        }
+
+        .resize-warning h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .resize-warning p {
+            font-size: 16px;
+            color: #aaa;
+            max-width: 400px;
+        }
     </style>
 </head>
 <body>
@@ -132,13 +162,10 @@
         <!-- Canvas -->
         <canvas id="canvas" oncontextmenu="return false;"></canvas>
 
-        <!-- Control Buttons -->
-        <div class="controls">
-            <button class="control-btn" onclick="goBack()" title="Close">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+        <!-- Resize Warning Overlay -->
+        <div class="resize-warning" id="resizeWarning">
+            <h2>⚠️ Window Resized</h2>
+            <p>Please refresh the page to continue. The WebGPU renderer was initialized at a fixed resolution.</p>
         </div>
 
         <!-- Controls Help -->
@@ -153,8 +180,11 @@
         const loadingOverlay = document.getElementById('loading');
         const progressEl = document.getElementById('progress');
         const errorEl = document.getElementById('error');
+        const resizeWarning = document.getElementById('resizeWarning');
         
         let moduleInstance = null;
+        let initialWidth = null;
+        let initialHeight = null;
 
         function resizeCanvas() {
             if (canvas && container) {
@@ -166,13 +196,13 @@
             }
         }
 
-        function goBack() {
-            if (document.fullscreenElement) {
-                document.exitFullscreen().then(() => {
-                    window.history.back();
-                });
-            } else {
-                window.history.back();
+        function checkResize() {
+            if (initialWidth !== null && initialHeight !== null) {
+                const currentWidth = window.innerWidth;
+                const currentHeight = window.innerHeight;
+                if (currentWidth !== initialWidth || currentHeight !== initialHeight) {
+                    resizeWarning.classList.add('visible');
+                }
             }
         }
 
@@ -287,6 +317,11 @@
                 showError(error.message || 'Unknown error');
             }
         }
+
+        // Store initial dimensions and set up resize detection
+        initialWidth = window.innerWidth;
+        initialHeight = window.innerHeight;
+        window.addEventListener('resize', checkResize);
 
         resizeCanvas();
         loadSkyegrid();
