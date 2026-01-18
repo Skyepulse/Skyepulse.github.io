@@ -87,6 +87,14 @@
         "projects":
         [   
             {
+                "title": "Skyegrid Voxel Engine",
+                "description": "A from scratch WGPU (both native and web) pure compute shader voxel engine in c++, with optimized disk streaming, LOD management and real time editing.",
+                "image": "ProjectPictures/Skyegrid.png",
+                "link": "/projects/skyegrid",
+                "types": ["All", "Web", "Graphics", "Research"],
+                "year": 2026
+            },
+            {
                 "title": "AVBD web demo",
                 "description": "I implemented a real-time 2D Augmented Vertex Block Descent (AVBD) algorithm, using WebGPU for rendering and further optimisations. Based on Chris Gile's 2D demo.",
                 "image": "ProjectPictures/web_avbd.png",
