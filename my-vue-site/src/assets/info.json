@@ -83,9 +83,17 @@
     "Projects":
     {
         "title": "Discover My Projects",
-        "types":["All", "Graphics", "Simulation", "Web", "Games", "AI", "GameJam"],
+        "types":["All", "Graphics", "Simulation", "Web", "Games", "AI", "GameJam", "Research"],
         "projects":
-        [
+        [   
+            {
+                "title": "AVBD web demo",
+                "description": "I implemented a real-time 2D Augmented Vertex Block Descent (AVBD) algorithm, using WebGPU for rendering and further optimisations. Based on Chris Gile's 2D demo.",
+                "image": "ProjectPictures/web_avbd.png",
+                "link": "/projects/web-avbd2d",
+                "types": ["All", "Web", "Graphics", "Simulation", "Research", "Games"],
+                "year": 2025
+            },
             {
                 "title": "WEBGPU BASICS COLLECTIONS",
                 "description": "A collection of small WebGPU basic demos and experiments, showcasing the capabilities of the new WebGPU API. Perfect to start learning it.",
@@ -99,7 +107,7 @@
                 "description": "An interactive and connected web application to visualize the inner workings of Convolutional Neural Networks.",
                 "image": "ProjectPictures/CNN.png",
                 "link": "https://www.008032025.xyz",
-                "types": ["All", "Web", "AI", "Graphics"],
+                "types": ["All", "Web", "AI", "Graphics", "Research"],
                 "year": 2025
             },
             {
@@ -107,7 +115,7 @@
                 "description": "A real-time Optimized SPH water simulation game with custom physics and rendering engines, coded in C++ and OpenGL, based on dynamic fluid research papers.",
                 "image": "ProjectPictures/GO4.png",
                 "link": "/legacy/HTMLContents/Projects/GlassOverflow.html",
-                "types": ["All", "Simulation", "Graphics", "Games"],
+                "types": ["All", "Simulation", "Graphics", "Games", "Research"],
                 "year": 2024
             },
             {
