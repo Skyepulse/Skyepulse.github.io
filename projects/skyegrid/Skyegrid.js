@@ -84,7 +84,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: C:\Users\elmry\AppData\Local\Temp\tmpe21b8rjg.js
+// include: C:\Users\elmry\AppData\Local\Temp\tmpbfbwass5.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -214,25 +214,25 @@ Module['FS_createPath']("/", "data", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/Shaders/blit.wgsl", "start": 0, "end": 826}, {"filename": "/Shaders/computeCompactVoxel.wgsl", "start": 826, "end": 5193}, {"filename": "/Shaders/computeUploadVoxel.wgsl", "start": 5193, "end": 7701}, {"filename": "/Shaders/computeVoxel.wgsl", "start": 7701, "end": 22041}, {"filename": "/Shaders/computeVoxelization.wgsl", "start": 22041, "end": 30881}, {"filename": "/Shaders/debug.wgsl", "start": 30881, "end": 31239}, {"filename": "/data/cake.vox", "start": 31239, "end": 32619643}, {"filename": "/data/flask.vox", "start": 32619643, "end": 54984895}, {"filename": "/data/lighthouse.vox", "start": 54984895, "end": 105667987}, {"filename": "/data/shiba.vox", "start": 105667987, "end": 120082927}, {"filename": "/data/trailer.vox", "start": 120082927, "end": 163984855}, {"filename": "/data/walle.vox", "start": 163984855, "end": 276493763}], "remote_package_size": 276493763});
+    loadPackage({"files": [{"filename": "/Shaders/blit.wgsl", "start": 0, "end": 826}, {"filename": "/Shaders/computeCompactVoxel.wgsl", "start": 826, "end": 5193}, {"filename": "/Shaders/computeUploadVoxel.wgsl", "start": 5193, "end": 7701}, {"filename": "/Shaders/computeVoxel.wgsl", "start": 7701, "end": 22041}, {"filename": "/Shaders/computeVoxelization.wgsl", "start": 22041, "end": 30881}, {"filename": "/Shaders/debug.wgsl", "start": 30881, "end": 31239}, {"filename": "/data/cake.vox", "start": 31239, "end": 32619643}, {"filename": "/data/lighthouse.vox", "start": 32619643, "end": 48537535}, {"filename": "/data/shiba.vox", "start": 48537535, "end": 51836219}, {"filename": "/data/trailer.vox", "start": 51836219, "end": 65694151}, {"filename": "/data/walle.vox", "start": 65694151, "end": 93233015}], "remote_package_size": 93233015});
 
   })();
 
-// end include: C:\Users\elmry\AppData\Local\Temp\tmpe21b8rjg.js
-// include: C:\Users\elmry\AppData\Local\Temp\tmpyogn513k.js
+// end include: C:\Users\elmry\AppData\Local\Temp\tmpbfbwass5.js
+// include: C:\Users\elmry\AppData\Local\Temp\tmp_ekndcjq.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: C:\Users\elmry\AppData\Local\Temp\tmpyogn513k.js
-// include: C:\Users\elmry\AppData\Local\Temp\tmpq_sore6v.js
+  // end include: C:\Users\elmry\AppData\Local\Temp\tmp_ekndcjq.js
+// include: C:\Users\elmry\AppData\Local\Temp\tmp06zfiqp2.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: C:\Users\elmry\AppData\Local\Temp\tmpq_sore6v.js
+  // end include: C:\Users\elmry\AppData\Local\Temp\tmp06zfiqp2.js
 
 
 var arguments_ = [];

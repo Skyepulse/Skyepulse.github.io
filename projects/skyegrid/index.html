@@ -155,12 +155,7 @@
 
             moduleInstance = await window.createSkyegridModule({
                 canvas: canvas,
-                locateFile: (path) => 
-                {
-                    if (path.endsWith('.data'))
-                        return 'https://githubpagesvideos.s3.amazonaws.com/Skyegrid.data';
-                    return '/projects/skyegrid/' + path;
-                },
+                locateFile: (path) => '/projects/skyegrid/' + path,
                 setStatus: updateProgress,
                 onRuntimeInitialized: () => { hideLoading(); resizeCanvas(); },
                 monitorRunDependencies: (left) => { if (left === 0) hideLoading(); }
