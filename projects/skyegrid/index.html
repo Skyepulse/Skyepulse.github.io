@@ -25,7 +25,6 @@
             overflow: hidden;
         }
         
-        /* Loading Overlay */
         .loading-overlay {
             position: absolute;
             inset: 0;
@@ -66,14 +65,12 @@
             font-size: 14px;
         }
         
-        /* Canvas */
         #canvas {
             display: block;
             width: 100%;
             height: 100%;
         }
         
-        /* Control Buttons */
         .controls {
             position: absolute;
             top: 16px;
@@ -102,7 +99,6 @@
             height: 20px;
         }
         
-        /* Controls Help */
         .controls-help {
             position: absolute;
             bottom: 16px;
@@ -119,7 +115,6 @@
             opacity: 1;
         }
 
-        /* Resize Warning Overlay */
         .resize-warning {
             position: fixed;
             inset: 0;
@@ -152,25 +147,17 @@
 </head>
 <body>
     <div class="container" id="container">
-        <!-- Loading Overlay -->
+
         <div class="loading-overlay" id="loading">
             <div class="spinner"></div>
             <p class="loading-text">Loading Skyegrid... <span id="progress">0</span>%</p>
             <p class="error-text" id="error" style="display: none;"></p>
         </div>
 
-        <!-- Canvas -->
         <canvas id="canvas" oncontextmenu="return false;"></canvas>
 
-        <!-- Resize Warning Overlay -->
-        <div class="resize-warning" id="resizeWarning">
-            <h2>⚠️ Window Resized</h2>
-            <p>Please refresh the page to continue. The WebGPU renderer was initialized at a fixed resolution.</p>
-        </div>
-
-        <!-- Controls Help -->
         <div class="controls-help">
-            <p>WASD - Move | Space/Shift - Up/Down | Q/E - Rotate</p>
+            <p>WASD - Move | UP_ARROW/DOWN_ARROW - Up/Down | LEFT_ARROW/RIGHT_ARROW - Rotate | SHIFT - Speed Up</p>
         </div>
     </div>
 
@@ -180,7 +167,6 @@
         const loadingOverlay = document.getElementById('loading');
         const progressEl = document.getElementById('progress');
         const errorEl = document.getElementById('error');
-        const resizeWarning = document.getElementById('resizeWarning');
         
         let moduleInstance = null;
         let initialWidth = null;
@@ -201,7 +187,8 @@
                 const currentWidth = window.innerWidth;
                 const currentHeight = window.innerHeight;
                 if (currentWidth !== initialWidth || currentHeight !== initialHeight) {
-                    resizeWarning.classList.add('visible');
+                    // force a reload
+                    window.location.reload();
                 }
             }
         }
@@ -231,11 +218,9 @@
                     canvas: canvas,
                     locateFile: function(path) {
                         const fullPath = '/projects/skyegrid/' + path;
-                        console.log('[Skyegrid] locateFile:', path, '->', fullPath);
                         return fullPath;
                     },
                     setStatus: function(text) {
-                        console.log('[Skyegrid] Status:', text);
                         if (text) {
                             const downloadMatch = text.match(/Downloading.*\((\d+)\/(\d+)\)/);
                             if (downloadMatch) {
@@ -249,20 +234,16 @@
                         }
                     },
                     onRuntimeInitialized: function() {
-                        console.log('[Skyegrid] Runtime initialized!');
                         hideLoading();
                         resizeCanvas();
                     },
                     monitorRunDependencies: function(left) {
-                        console.log('[Skyegrid] Dependencies remaining:', left);
                         if (left === 0) {
                             hideLoading();
                         }
                     }
                 });
-                
-                console.log('[Skyegrid] Module created successfully');
-                
+                                
             } catch (error) {
                 console.error('[Skyegrid] Module init error:', error);
                 showError(error.message || 'Failed to initialize');
@@ -271,7 +252,6 @@
 
         async function loadSkyegrid() {
             try {
-                console.log('[Skyegrid] Starting load...');
                 
                 if (!canvas) {
                     showError('Canvas element not found');
@@ -280,36 +260,29 @@
 
                 // Check if already loaded
                 if (typeof window.createSkyegridModule === 'function') {
-                    console.log('[Skyegrid] Module already loaded, initializing...');
                     await initModule();
                     return;
                 }
-
-                console.log('[Skyegrid] Loading script...');
                 
                 const script = document.createElement('script');
                 script.src = '/projects/skyegrid/Skyegrid.js';
                 
                 await new Promise((resolve, reject) => {
                     script.onload = () => {
-                        console.log('[Skyegrid] Script loaded successfully');
                         resolve();
                     };
                     script.onerror = (e) => {
-                        console.error('[Skyegrid] Script failed to load', e);
                         reject(new Error('Failed to load Skyegrid.js'));
                     };
                     document.body.appendChild(script);
                 });
 
-                // Wait for script to execute
                 await new Promise(resolve => setTimeout(resolve, 50));
 
                 if (!window.createSkyegridModule) {
                     throw new Error('createSkyegridModule not defined after script load');
                 }
 
-                console.log('[Skyegrid] createSkyegridModule is available');
                 await initModule();
                 
             } catch (error) {
@@ -318,7 +291,6 @@
             }
         }
 
-        // Store initial dimensions and set up resize detection
         initialWidth = window.innerWidth;
         initialHeight = window.innerHeight;
         window.addEventListener('resize', checkResize);
