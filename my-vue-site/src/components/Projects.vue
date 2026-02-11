@@ -81,10 +81,10 @@
 
     //================================//
     watchEffect(() => {
-    if (info.value?.Projects) {
-        projects.value = info.value.Projects.projects;
-        types.value = info.value.Projects.types;
-    }
+        if (info.value?.Projects) {
+            projects.value = info.value.Projects.projects;
+            types.value = info.value.Projects.types;
+        }
     });
 
     //================================//
