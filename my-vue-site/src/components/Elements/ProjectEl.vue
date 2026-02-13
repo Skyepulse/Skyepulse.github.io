@@ -25,11 +25,11 @@
             />
             <p class="text-lg text-gray-500 font-bold pl-2 mb-4 text-left" :class="{'leading-tight':isMobile}">{{ description }}</p>
             <div class="flex flex-row items-center justify-start w-full pl-2 mb-4">
-                <template v-if="link.startsWith('http://') || link.startsWith('https://')">
+                <template v-if="link.startsWith('http://') || link.startsWith('https://') || link.startsWith('/projects/')">
                     <a :href="link" target="_blank" class="text-2xl text-gray-600 underline font-bold hover:underline">Visit Project Website</a>
                 </template>
                 <template v-else>
-                    <a :href="link" target="_blank" class="text-2xl text-gray-600 underline font-bold hover:underline">Learn More about this project</a>
+                    <router-link :to="link" class="text-2xl text-gray-600 underline font-bold hover:underline">Learn More about this project</router-link>
                 </template>
             </div>
          </div>
@@ -39,6 +39,9 @@
 
 <script setup lang="ts">
     import { ref, watch } from 'vue';
+    import { useRouter } from 'vue-router';
+
+    const router = useRouter();
 
     //================================//
     const props = defineProps({
@@ -85,6 +88,13 @@
 
     //================================//
     const handleClick = () => {
-        window.open(props.link, '_blank');
+        if (props.link.startsWith('/vue/projects/')) 
+        {
+            router.push(props.link);
+        } 
+        else
+        {
+            window.open(props.link, '_blank');
+        }
     };
 </script>

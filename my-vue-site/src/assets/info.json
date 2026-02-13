@@ -95,7 +95,15 @@
                 "year": 2026
             },
             {
-                "title": "AVBD web demo",
+                "title": "Gaussian Splatting Surface Reconstruction Survey",
+                "description": "Research project aiming at surveying state of the art surface reconstruction techniques based on Gaussian Splatting pipelines.",
+                "image": "ProjectPictures/GaussRecon.png",
+                "link": "/vue/projects/gaussian-splatting-reconstruction",
+                "types": ["All", "Graphics", "Research", "AI"],
+                "year": 2025
+            },
+            {
+                "title": "AVBD-2D web demo",
                 "description": "I implemented a real-time 2D Augmented Vertex Block Descent (AVBD) algorithm, using WebGPU for rendering and further optimisations. Based on Chris Gile's 2D demo.",
                 "image": "ProjectPictures/web_avbd.png",
                 "link": "/projects/web-avbd2d",

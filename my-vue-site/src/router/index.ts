@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw, RouterScrollBehavior } from 'vue-router'
 import App from '../App.vue'
+import GaussianSplattingRecon from '@src/components/ProjectPages/GaussianSplattingRecon.vue'
 
 const routes: RouteRecordRaw[] = [
     {
@@ -18,6 +19,12 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/contact',
         component: App,
+    },
+
+    // Pages for individual projects
+    {
+        path: '/vue/projects/gaussian-splatting-reconstruction',
+        component:  GaussianSplattingRecon,
     }
 ]
 
